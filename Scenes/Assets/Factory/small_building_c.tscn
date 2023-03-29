@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://db76j15b2va3k"]
+
+[ext_resource type="PackedScene" uid="uid://df0cgvpoyb7dx" path="res://Assets/city/small_buildingC.glb" id="1_wdulk"]
+
+[node name="small_buildingC" instance=ExtResource("1_wdulk")]

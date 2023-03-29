@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://pc37d2n5utpt"]
+
+[ext_resource type="PackedScene" uid="uid://ckjbfakauejjy" path="res://Assets/city/wall_windowF.glb" id="1_g4e55"]
+
+[node name="wall_windowF" instance=ExtResource("1_g4e55")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tmpParent" index="1"]

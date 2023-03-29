@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3ktt2qe5vbnm"]
+
+[ext_resource type="PackedScene" uid="uid://bjos3i8qwbvvl" path="res://Assets/city/detail_awningWide.glb" id="1_qjf15"]
+
+[node name="detail_awningWide" instance=ExtResource("1_qjf15")]

@@ -3,14 +3,11 @@
 [ext_resource type="Script" path="res://Scenes/Player/Player_Robot.gd" id="1_tdxbd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iyqh7"]
-radius = 1.0
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_rmbk4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_6tlrr"]
 material = SubResource("ORMMaterial3D_rmbk4")
-radius = 1.0
-height = 2.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_kqque"]
 

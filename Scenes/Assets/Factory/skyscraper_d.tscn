@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dah4dvu7noopx"]
+
+[ext_resource type="PackedScene" uid="uid://bkkv1qmu6p818" path="res://Assets/city/skyscraperD.glb" id="1_11l8p"]
+
+[node name="skyscraperD" instance=ExtResource("1_11l8p")]

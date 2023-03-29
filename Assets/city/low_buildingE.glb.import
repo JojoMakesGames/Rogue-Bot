@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/low_buildingE.glb-e065d91969fc98a6468c6247e25
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Object"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
