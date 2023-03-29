@@ -1,3 +1,3 @@
-extends CharacterBody3D
+extends PhysicsBody3D
 
 class_name PossessableObject

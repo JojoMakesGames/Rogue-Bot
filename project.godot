@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/Tests/Test_Robot_Walk.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=2304
+window/size/viewport_height=1308
+
 [input]
 
 left={
@@ -56,3 +61,4 @@ hack={
 
 3d_physics/layer_1="Player"
 3d_physics/layer_2="Ground"
+3d_physics/layer_3="DetectionZone"
