@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://evj67m3f7pbo"]
+
+[ext_resource type="Script" path="res://Scripts/StateMachine/player_robot.gd" id="1_ui6sl"]
+[ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5qk8t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0myy"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_qunvm"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_k0myy")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oub35"]
+
+[node name="PlayerRobot" type="CharacterBody3D"]
+collision_mask = 7
+script = ExtResource("1_ui6sl")
+SPEED = 5.0
+JUMP_VELOCITY = 4.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5qk8t")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_304l3")]
+player = NodePath("..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_qunvm")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.948412, 0.31704, 0, -0.31704, 0.948412, 0, 1.56849, 3.95809)
+
+[node name="DetectionArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_oub35")

@@ -1,16 +1,14 @@
-extends Node2D
+extends Node3D
 class_name PlayerState
 
 	
 var start_time: int
-var player: Player
+var player
 var state_machine: PlayerStateMachine
-var can_shoot: bool:
-	get: return state_machine.shooting.can_shoot
+
 
 func enter():
 	start_time = Time.get_ticks_msec()
-	print_debug("Enter State: ",get_class())
 	
 func exit():
 	pass
