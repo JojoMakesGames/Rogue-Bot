@@ -1,4 +1,4 @@
-extends PlayerState
+extends PlayerRobotState
 class_name PlayerAbilityState
 
 var is_ability_done: bool

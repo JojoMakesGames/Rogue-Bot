@@ -1,28 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqba1gi0fi5wk"]
+[gd_scene load_steps=5 format=3 uid="uid://bgsles7y11rwc"]
 
-[ext_resource type="PackedScene" uid="uid://iixcyb6kbowu" path="res://Scenes/Player/Player_Robot.tscn" id="1_uo2fu"]
+[ext_resource type="PackedScene" uid="uid://evj67m3f7pbo" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_i31tc"]
-size = Vector3(100, 1, 100)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_08o06"]
-size = Vector3(100, 1, 100)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o48s"]
+albedo_color = Color(0.396078, 0.0470588, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kax53"]
+material = SubResource("StandardMaterial3D_6o48s")
+size = Vector2(100, 100)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_i31tc")
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_75g6m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_08o06")
-
-[node name="Player_Robot" parent="." instance=ExtResource("1_uo2fu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85452, 0)
-
-[node name="Camera3D2" type="Camera3D" parent="Player_Robot"]
-transform = Transform3D(1, 0, 0, 0, 0.810839, 0.585269, 0, -0.585269, 0.810839, -0.554488, 3.82149, 7.99452)
+mesh = SubResource("PlaneMesh_kax53")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0.92383, 7.44383e-18, -0.997838, -0.0657166, 0, 3.79025, 31.5465)
+
+[node name="PlayerRobot" parent="." instance=ExtResource("1_mc7p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2389, 0)
+SPEED = 10.0
+JUMP_VELOCITY = 4.0
+hacked = true
+
+[node name="Camera3D" type="Camera3D" parent="PlayerRobot"]
+transform = Transform3D(1, 0, 0, 0, 0.982755, 0.184912, 0, -0.184912, 0.982755, 0, 1.55244, 6.31939)
