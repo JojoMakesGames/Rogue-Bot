@@ -11,7 +11,7 @@ func physics_update(delta):
 
 func handle_input(delta):
 	super.handle_input(delta)
-	if player.is_on_floor() and state_machine.moving.direction != Vector3.ZERO:
+	if player.is_on_floor() and Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
 		state_machine.change_state(state_machine.moving)
 	elif !player.is_on_floor():
 		state_machine.change_state(state_machine.in_air)

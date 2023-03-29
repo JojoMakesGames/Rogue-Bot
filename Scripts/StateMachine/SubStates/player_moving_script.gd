@@ -1,10 +1,11 @@
 extends PlayerGroundedState
 class_name PlayerMovingState
 
-var direction: Vector3: 
-	get: 
-		var input_dir = Input.get_vector("left", "right", "up", "down")
-		return (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+var input_dir: Vector2:
+	get:
+		return Input.get_vector("left", "right", "up", "down")
+		
+var direction
 
 	
 func physics_update(delta):
@@ -13,16 +14,19 @@ func physics_update(delta):
 		player.velocity.x = direction.x * player.SPEED
 		player.velocity.z = direction.z * player.SPEED
 	else:
-		print_debug("Slowing Down")
 		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED)
 		player.velocity.z = move_toward(player.velocity.z, 0, player.SPEED)
-		print_debug("Player velocity: ", player.velocity)
 	
 	player.move_and_slide()
 	
 
 func handle_input(delta):
 	super.handle_input(delta)
+	var forward = player.global_transform.basis.z
+	print_debug("Forward: ", forward)
+	var right = player.global_transform.basis.x
+	print_debug("right: ", right)		
+	direction = (forward * input_dir.y + right * input_dir.x).normalized()
 	if player.velocity == Vector3.ZERO and direction == Vector3.ZERO:
 		state_machine.change_state(state_machine.idle)
 	if !player.is_on_floor():

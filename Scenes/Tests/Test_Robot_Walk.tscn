@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgsles7y11rwc"]
+[gd_scene load_steps=6 format=3 uid="uid://bgsles7y11rwc"]
 
 [ext_resource type="PackedScene" uid="uid://evj67m3f7pbo" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
+[ext_resource type="Script" path="res://Scripts/StateMachine/player.gd" id="1_otp8b"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
@@ -29,7 +30,10 @@ transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2389, 0)
 SPEED = 10.0
 JUMP_VELOCITY = 4.0
-hacked = true
 
 [node name="Camera3D" type="Camera3D" parent="PlayerRobot"]
 transform = Transform3D(1, 0, 0, 0, 0.982755, 0.184912, 0, -0.184912, 0.982755, 0, 1.55244, 6.31939)
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("hacked_object")]
+script = ExtResource("1_otp8b")
+hacked_object = NodePath("../PlayerRobot")

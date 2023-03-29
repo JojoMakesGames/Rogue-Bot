@@ -1,22 +1,24 @@
 extends Node3D
 class_name Player
 
-var possession
+@export var hacked_object: PossessableObject
+var mouse_delta: Vector2
+var camera: Camera3D
 
-@export var SPEED: float
-@export var JUMP_VELOCITY: float
-@export var acceleration: float
-
-var state_machine: PlayerStateMachine
-@onready var body = $Body
-
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-func _physics_process(delta):
-	body.physics(delta)
-	body.SPEED = self.SPEED
-	body.JUMP_VELOCITY = self.JUMP_VELOCITY
-	self.global_position = body.global_position
+func _ready():
+	hacked_object.hacked = true
+	camera = hacked_object.get_node("Camera3D")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
+	
 	
 func _process(delta):
-	body.process(delta)
+	hacked_object.rotation_degrees.x -= mouse_delta.y * 10.0 * delta
+	hacked_object.rotation_degrees.x = clamp(hacked_object.rotation_degrees.x, -90, 90)
+  
+	hacked_object.rotation_degrees.y -= mouse_delta.x * 10.0 * delta
+	mouse_delta = Vector2()
+	
+func _input(event):
+	if event is InputEventMouseMotion:
+		mouse_delta = event.relative
+
