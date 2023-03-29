@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqba1gi0fi5wk"]
+
+[ext_resource type="PackedScene" uid="uid://iixcyb6kbowu" path="res://Scenes/Player/Player_Robot.tscn" id="1_uo2fu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i31tc"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_08o06"]
+size = Vector3(100, 1, 100)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_i31tc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_08o06")
+
+[node name="Player_Robot" parent="." instance=ExtResource("1_uo2fu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85452, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="Player_Robot"]
+transform = Transform3D(1, 0, 0, 0, 0.810839, 0.585269, 0, -0.585269, 0.810839, -0.554488, 3.82149, 7.99452)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0.92383, 7.44383e-18, -0.997838, -0.0657166, 0, 3.79025, 31.5465)
