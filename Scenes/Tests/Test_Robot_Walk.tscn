@@ -15,6 +15,7 @@ size = Vector2(100, 100)
 [node name="Node3D" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -32,6 +33,14 @@ SPEED = 10.0
 JUMP_VELOCITY = 4.0
 
 [node name="Camera3D" type="Camera3D" parent="PlayerRobot"]
+transform = Transform3D(1, 0, 0, 0, 0.982755, 0.184912, 0, -0.184912, 0.982755, 0, 1.55244, 6.31939)
+
+[node name="PlayerRobot2" parent="." instance=ExtResource("1_mc7p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2389, 8.33675)
+SPEED = 10.0
+JUMP_VELOCITY = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="PlayerRobot2"]
 transform = Transform3D(1, 0, 0, 0, 0.982755, 0.184912, 0, -0.184912, 0.982755, 0, 1.55244, 6.31939)
 
 [node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("hacked_object")]
