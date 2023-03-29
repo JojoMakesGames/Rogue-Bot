@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmwgvdw5rgjwl"]
+
+[ext_resource type="PackedScene" uid="uid://iixcyb6kbowu" path="res://Scenes/Player/Player_Robot.tscn" id="1_yl0uc"]
+
+[node name="Test_Factory" type="Node3D"]
+
+[node name="Player_Robot" parent="." instance=ExtResource("1_yl0uc")]
+
+[node name="Camera3D" type="Camera3D" parent="Player_Robot"]
+transform = Transform3D(-0.998806, 0, -0.0488498, 0, 1, 0, 0.0488498, 0, -0.998806, 0, 0, -6.65903)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.358515, 0.933524, 0, -0.933524, -0.358515, 0, 4.93835, -3.55625)
