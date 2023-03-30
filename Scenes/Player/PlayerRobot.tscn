@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://evj67m3f7pbo"]
 
 [ext_resource type="Script" path="res://Scripts/StateMachine/player_robot.gd" id="1_ui6sl"]
-[ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5qk8t"]
 
@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.948412, 0.31704, 0, -0.31704, 0.948412, 0,
 
 [node name="DetectionArea" type="Area3D" parent="."]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
