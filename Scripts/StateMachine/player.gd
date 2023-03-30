@@ -1,25 +1,30 @@
 extends Node3D
 class_name Player
 
+@onready var camera: Camera3D = $Camera3D
+
 @export var hacked_object: PhysicsBody3D
 var mouse_delta: Vector2
-var camera: Camera3D
 var current_scan: Node3D
 
 func _ready():
 	hacked_object.hacked = true
-	camera = hacked_object.get_node("Camera3D")
-	camera.make_current()
+	position = hacked_object.position
+	camera.target = self
+	camera.offset = hacked_object.camera_placement.position
+	#camera = hacked_object.get_node("CameraPlacement")
+	#camera.make_current()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func _physics_process(_delta):
 	scan_for_hackables()
 	
 func _process(delta):
-	hacked_object.rotation_degrees.x -= mouse_delta.y * 10.0 * delta
-	hacked_object.rotation_degrees.x = clamp(hacked_object.rotation_degrees.x, -90, 90)
+	position = hacked_object.position
+	rotation_degrees.x -= mouse_delta.y * 10.0 * delta
+	rotation_degrees.x = clamp(rotation_degrees.x, -90, 90)
   
-	hacked_object.rotation_degrees.y -= mouse_delta.x * 10.0 * delta
+	rotation_degrees.y -= mouse_delta.x * 10.0 * delta
 	mouse_delta = Vector2()
 	
 func _input(event):

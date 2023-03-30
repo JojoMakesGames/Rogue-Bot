@@ -5,6 +5,8 @@ class_name PlayerRobot
 @onready var state_machine: PlayerRobotStateMachine = $StateMachine
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var base_color: Color = mesh.mesh.material.albedo_color
+@onready var animations: AnimationPlayer = $Robot/AnimationPlayer
+@onready var camera_placement: Node3D = $CameraPlacement
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") 
 
 @export var SPEED: float

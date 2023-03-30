@@ -10,6 +10,7 @@ func enter():
 	number_of_jumps_left -= 1
 	is_ability_done = true;
 	state_machine.in_air.is_jumping = true
+	self.animation.play("Robot_WalkJump")
 	player.move_and_slide()
 	
 func exit():

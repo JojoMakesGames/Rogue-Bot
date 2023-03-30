@@ -3,11 +3,10 @@ class_name PlayerIdleState
 
 var x_input: float
 
-func physics_update(delta):
-	super.physics_update(delta)
-	player.velocity.y = .0001
-	
-	player.move_and_slide()
+func enter():
+	super.enter()
+	print_debug("Enter Idle")
+	self.animation.play("Robot_Idle")
 
 func handle_input(delta):
 	super.handle_input(delta)
