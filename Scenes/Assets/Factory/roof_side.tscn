@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://wa7ov18wiywi"]
+
+[ext_resource type="PackedScene" uid="uid://dshd3s8gemiex" path="res://Assets/city/roof_side.glb" id="1_kklwj"]
+
+[node name="roof_side" instance=ExtResource("1_kklwj")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://fs8gacslju"]
+
+[ext_resource type="PackedScene" uid="uid://bccc8plk3flrq" path="res://Assets/city/roof_overhang.glb" id="1_67doq"]
+
+[node name="roof_overhang" instance=ExtResource("1_67doq")]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1u7db5rj17fx"]
+
+[ext_resource type="PackedScene" uid="uid://dhmmh6ku1g1ji" path="res://Assets/city/small_buildingB.glb" id="1_mqkce"]
+
+[node name="small_buildingB" instance=ExtResource("1_mqkce")]
+
+[node name="small_buildingB2" parent="tmpParent" index="0"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

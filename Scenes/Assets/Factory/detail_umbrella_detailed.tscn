@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://7q5b4kbok6g3"]
+
+[ext_resource type="PackedScene" uid="uid://ck7iqa501yeru" path="res://Assets/city/detail_umbrellaDetailed.glb" id="1_wbt2y"]
+
+[node name="detail_umbrellaDetailed" instance=ExtResource("1_wbt2y")]

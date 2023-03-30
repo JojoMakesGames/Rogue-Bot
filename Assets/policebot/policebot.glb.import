@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bot6if7ck36pc"
-path="res://.godot/imported/low_buildingE.glb-e065d91969fc98a6468c6247e25e3dd9.scn"
+uid="uid://d4jp03ufmwok0"
+path="res://.godot/imported/policebot.glb-1c26971f4b176b3fbf324728959cc422.scn"
 
 [deps]
 
-source_file="res://Assets/city/low_buildingE.glb"
-dest_files=["res://.godot/imported/low_buildingE.glb-e065d91969fc98a6468c6247e25e3dd9.scn"]
+source_file="res://Assets/policebot/policebot.glb"
+dest_files=["res://.godot/imported/policebot.glb-1c26971f4b176b3fbf324728959cc422.scn"]
 
 [params]
 
-nodes/root_type="Object"
+nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

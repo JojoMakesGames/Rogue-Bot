@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpfoytubvnsi2"]
+
+[ext_resource type="PackedScene" uid="uid://boqsqytwou2lx" path="res://Assets/city/small_buildingF.glb" id="1_qj06b"]
+
+[node name="small_buildingF" instance=ExtResource("1_qj06b")]

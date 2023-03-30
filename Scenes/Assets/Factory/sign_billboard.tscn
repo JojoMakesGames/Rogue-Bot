@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxmotpp8yxetu"]
+
+[ext_resource type="PackedScene" uid="uid://bajqk2egox2vk" path="res://Assets/city/sign_billboard.glb" id="1_bsdnh"]
+
+[node name="sign_billboard" instance=ExtResource("1_bsdnh")]

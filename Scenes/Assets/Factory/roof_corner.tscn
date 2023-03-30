@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://lohfc70v6f3m"]
+
+[ext_resource type="PackedScene" uid="uid://f2b2yr50r58n" path="res://Assets/city/roof_corner.glb" id="1_ek2t8"]
+
+[node name="roof_corner" instance=ExtResource("1_ek2t8")]

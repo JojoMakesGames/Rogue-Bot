@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chk58oklit1e0"]
+
+[ext_resource type="PackedScene" uid="uid://wmnbfwo6u8xm" path="res://Assets/city/wall_windowB.glb" id="1_wfb74"]
+
+[node name="wall_windowB" instance=ExtResource("1_wfb74")]
