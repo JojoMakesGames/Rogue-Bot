@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgsles7y11rwc"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
+[ext_resource type="PackedScene" uid="uid://b73pcoed0igw3" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
 [ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="3_sbjw1"]
-[ext_resource type="PackedScene" uid="uid://v32voj1n34q1" path="res://Scenes/Player/Player.tscn" id="3_vqpv8"]
+[ext_resource type="PackedScene" uid="uid://6re2bnk6kdvf" path="res://Scenes/Player/Player.tscn" id="3_vqpv8"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
