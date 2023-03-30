@@ -1,10 +1,10 @@
 extends Node3D
 class_name PlayerState
 
-	
 var start_time: int
 var player
 var state_machine: PlayerStateMachine
+var animation: AnimationPlayer
 
 
 func enter():

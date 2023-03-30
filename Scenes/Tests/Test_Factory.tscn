@@ -1,6 +1,5 @@
 [gd_scene load_steps=25 format=3 uid="uid://cd6ivk6611ga7"]
 
-[ext_resource type="Script" path="res://Scripts/StateMachine/player.gd" id="1_xljny"]
 [ext_resource type="PackedScene" uid="uid://dad8wbpsthf6h" path="res://Assets/city/large_buildingA.glb" id="2_lqp4o"]
 [ext_resource type="PackedScene" uid="uid://cve2pdib4k403" path="res://Assets/city/large_buildingB.glb" id="3_prkpw"]
 [ext_resource type="PackedScene" uid="uid://ux3b2iauikuc" path="res://Assets/city/large_buildingF.glb" id="4_5w8jt"]
@@ -12,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="10_lcvpr"]
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="12_e85xm"]
 [ext_resource type="Material" uid="uid://dsfu6ywc8olxm" path="res://Assets/robot/Black.tres" id="12_vxaxg"]
-[ext_resource type="PackedScene" uid="uid://evj67m3f7pbo" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
+[ext_resource type="PackedScene" uid="uid://v32voj1n34q1" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u1id3"]
 
@@ -49,10 +49,6 @@ size = Vector3(1, 1.30047, 1.02263)
 [node name="Test_Factory" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117409, -0.0817375, -0.0651064)
 
-[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("hacked_object")]
-script = ExtResource("1_xljny")
-hacked_object = NodePath("../PlayerRobot")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.694972, -0.0323672, 0.718308, -0.719037, -0.031284, 0.694268, 0, -0.998986, -0.0450147, 10.3053, 36.6386, 20.7369)
 
@@ -83,14 +79,14 @@ bones/46/scale = Vector3(1, 1, 1.00002)
 bones/47/rotation = Quaternion(0.277154, -3.12318e-07, 4.08035e-08, 0.960825)
 
 [node name="FootL_2" parent="Robot/RobotArmature/Skeleton3D" index="0"]
-transform = Transform3D(1, -8.52651e-14, -8.57092e-14, 5.68434e-14, 1, 1.2666e-07, -2.35367e-14, -1.11759e-07, 1, 0.624058, 0.397664, 0.191114)
+transform = Transform3D(1, -9.04493e-14, -8.55628e-14, 5.16219e-14, 1, 1.25413e-07, -2.37132e-14, -1.12943e-07, 1, 0.624058, 0.397664, 0.191114)
 bone_idx = 2
 
 [node name="FootL_2" parent="Robot/RobotArmature/Skeleton3D/FootL_2" index="0"]
 material_override = ExtResource("12_vxaxg")
 
 [node name="Head_2" parent="Robot/RobotArmature/Skeleton3D" index="1"]
-transform = Transform3D(0.997344, -0.0605066, -0.0405411, 0.0602789, 0.998158, -0.00681537, 0.0408788, 0.00435347, 0.999154, -0.060939, 3.65065, 0.0399589)
+transform = Transform3D(0.997344, -0.0605066, -0.0405411, 0.0602789, 0.998158, -0.00681538, 0.0408788, 0.00435346, 0.999154, -0.060939, 3.65065, 0.0399589)
 bone_idx = 9
 
 [node name="Head_2" parent="Robot/RobotArmature/Skeleton3D/Head_2" index="0"]
@@ -104,21 +100,21 @@ bone_idx = 24
 material_override = ExtResource("12_vxaxg")
 
 [node name="ShoulderL_2" parent="Robot/RobotArmature/Skeleton3D" index="3"]
-transform = Transform3D(0.434578, 0.900634, -1.10357e-07, -0.900634, 0.434578, -1.49874e-07, -3.58294e-08, 1.43193e-07, 1, 0.582681, 2.40805, -0.0209942)
+transform = Transform3D(0.434578, 0.900634, -1.10357e-07, -0.900634, 0.434578, -1.51178e-07, -2.47145e-08, 1.41006e-07, 1, 0.582681, 2.40805, -0.0209942)
 bone_idx = 25
 
 [node name="ShoulderL_2" parent="Robot/RobotArmature/Skeleton3D/ShoulderL_2" index="0"]
 material_override = ExtResource("12_vxaxg")
 
 [node name="ArmR" parent="Robot/RobotArmature/Skeleton3D" index="4"]
-transform = Transform3D(0.101816, -0.202931, -2.08616e-07, 0.202145, 0.101422, 0.0199571, -0.0178377, -0.00894988, 0.226162, -0.82569, 2.01812, 0.0402434)
+transform = Transform3D(0.101816, -0.202931, -2.04752e-07, 0.202145, 0.101422, 0.0199571, -0.0178377, -0.00894988, 0.226162, -0.82569, 2.01812, 0.0402434)
 bone_idx = 40
 
 [node name="ArmR" parent="Robot/RobotArmature/Skeleton3D/ArmR" index="0"]
 material_override = ExtResource("12_vxaxg")
 
 [node name="ShoulderR_2" parent="Robot/RobotArmature/Skeleton3D" index="5"]
-transform = Transform3D(0.448449, -0.893808, -7.38107e-08, 0.893808, 0.448449, -5.36874e-08, 4.91088e-08, -6.47962e-08, 1, -0.636986, 2.40748, -0.0209942)
+transform = Transform3D(0.448449, -0.893808, -7.38107e-08, 0.893808, 0.448449, -5.59598e-08, 4.06638e-08, -6.70583e-08, 1, -0.636986, 2.40748, -0.0209942)
 bone_idx = 41
 
 [node name="ShoulderR_2" parent="Robot/RobotArmature/Skeleton3D/ShoulderR_2" index="0"]
@@ -139,14 +135,14 @@ bone_idx = 45
 material_override = ExtResource("12_vxaxg")
 
 [node name="LowerLegR_2" parent="Robot/RobotArmature/Skeleton3D" index="8"]
-transform = Transform3D(0.962589, -0.00859097, -0.270827, -0.0120751, 0.997147, -0.0745333, 0.270696, 0.075029, 0.959728, -0.730434, 0.372037, 0.206395)
+transform = Transform3D(0.962589, -0.00859097, -0.270827, -0.0120751, 0.997147, -0.0745333, 0.270696, 0.0750291, 0.959728, -0.730434, 0.372037, 0.206395)
 bone_idx = 48
 
 [node name="LowerLegR_2" parent="Robot/RobotArmature/Skeleton3D/LowerLegR_2" index="0"]
 material_override = ExtResource("12_vxaxg")
 
 [node name="LegR" parent="Robot/RobotArmature/Skeleton3D" index="9"]
-transform = Transform3D(0.962472, 0.0441208, -0.267766, -0.0131833, 0.993133, 0.116261, 0.271059, -0.108362, 0.956436, -0.666557, 1.18434, 0.017944)
+transform = Transform3D(0.962472, 0.0441209, -0.267767, -0.0131833, 0.993133, 0.116261, 0.271059, -0.108362, 0.956437, -0.666557, 1.18434, 0.017944)
 bone_idx = 49
 
 [node name="LegR" parent="Robot/RobotArmature/Skeleton3D/LegR" index="0"]
@@ -160,7 +156,7 @@ bone_idx = 50
 material_override = ExtResource("12_vxaxg")
 
 [node name="FootR_2" parent="Robot/RobotArmature/Skeleton3D" index="11"]
-transform = Transform3D(1, 3.41061e-13, 7.81597e-14, 3.41061e-13, 1, -1.30385e-07, -3.55271e-14, -3.72529e-09, 1, -0.637997, 0.397664, 0.191115)
+transform = Transform3D(1, 1.50881e-13, 2.04162e-13, 2.33564e-13, 1, -6.80682e-08, 1.68309e-14, -8.63645e-09, 1, -0.637997, 0.397664, 0.191115)
 bone_idx = 53
 
 [node name="FootR_2" parent="Robot/RobotArmature/Skeleton3D/FootR_2" index="0"]
@@ -255,5 +251,8 @@ shape = SubResource("BoxShape3D_bj1d4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60697, 1.63396, 0.571829)
 
 [node name="PlayerRobot" parent="." instance=ExtResource("13_qafv8")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("hacked_object") instance=ExtResource("13_y1dmq")]
+hacked_object = NodePath("../PlayerRobot")
 
 [editable path="Robot"]

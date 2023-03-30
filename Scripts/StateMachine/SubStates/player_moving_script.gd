@@ -7,7 +7,11 @@ var input_dir: Vector2:
 		
 var direction
 
-	
+func enter():
+	super.enter()
+	print_debug("Enter Running")
+	self.animation.play("Robot_Running")
+
 func physics_update(delta):
 	super.physics_update(delta)
 	if direction:
@@ -18,13 +22,14 @@ func physics_update(delta):
 		player.velocity.z = move_toward(player.velocity.z, 0, player.SPEED)
 	
 	player.move_and_slide()
-	
 
 func handle_input(delta):
 	super.handle_input(delta)
 	var forward = player.global_transform.basis.z
 	var right = player.global_transform.basis.x
 	direction = (forward * input_dir.y + right * input_dir.x).normalized()
+	print_debug("player velocity: ", player.velocity)
+	print_debug("player direction: ", direction)
 	if player.velocity == Vector3.ZERO and direction == Vector3.ZERO:
 		state_machine.change_state(state_machine.idle)
 	if !player.is_on_floor():
