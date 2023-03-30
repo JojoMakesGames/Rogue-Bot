@@ -1,7 +1,7 @@
-extends PlayerState
+extends PlayerRobotState
 class_name PlayerInAirState
 
-var direction: float
+var direction: Vector3
 var is_jumping: bool
 var cut_jump: bool
 var time_since_jump: int
@@ -11,24 +11,27 @@ var gravity
 	
 func physics_update(delta):
 	super.physics_update(delta)
-	check_jump_multiplier()
-	gravity = player.gravity * 1.5 if player.velocity.y > 0 else player.gravity
-	player.velocity.y += gravity * delta
-	direction = Input.get_axis("move_left", "move_right")
-	player.velocity.x = move_toward(player.velocity.x, direction * player.SPEED, player.SPEED)
+	player.velocity.y -= player.gravity * delta
+	if direction:
+		player.velocity.x = direction.x * player.SPEED
+		player.velocity.z = direction.z * player.SPEED
+	else:
+		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED)
+		player.velocity.z = move_toward(player.velocity.z, 0, player.SPEED)
+	
 	
 	player.move_and_slide()
 
 func handle_input(delta):
+	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var forward = player.global_transform.basis.z
+	var right = player.global_transform.basis.x
+	direction = (forward * input_dir.y + right * input_dir.x).normalized()
 	super.handle_input(delta)
 	if player.is_on_floor():
 		state_machine.change_state(state_machine.idle)
-	elif Input.is_action_just_pressed("shoot") and state_machine.shooting.check_can_shoot(Time.get_ticks_msec()):
-		state_machine.change_state(state_machine.shooting)
 	elif Input.is_action_just_pressed("jump") and state_machine.jumping.can_jump():
 		state_machine.change_state(state_machine.jumping)
-	elif Input.is_action_just_pressed("glaive_dash") and state_machine.glaive_dashing.can_dash():
-		state_machine.change_state(state_machine.glaive_dashing)
 
 
 func check_jump_multiplier():

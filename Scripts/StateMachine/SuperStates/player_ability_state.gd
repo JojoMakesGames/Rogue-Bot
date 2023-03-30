@@ -1,4 +1,4 @@
-extends PlayerState
+extends PlayerRobotState
 class_name PlayerAbilityState
 
 var is_ability_done: bool
@@ -9,7 +9,6 @@ func enter():
 
 func handle_input(delta):
 	super.handle_input(delta)
-	print_debug("is_ability_done: ", is_ability_done)
 	if is_ability_done:
 		if player.is_on_floor() and player.velocity.y > -0.01:
 			state_machine.change_state(state_machine.idle)
