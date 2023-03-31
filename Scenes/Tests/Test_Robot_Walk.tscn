@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgsles7y11rwc"]
+[gd_scene load_steps=9 format=3 uid="uid://bgsles7y11rwc"]
 
-[ext_resource type="PackedScene" uid="uid://evj67m3f7pbo" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/player.gd" id="1_otp8b"]
+[ext_resource type="PackedScene" uid="uid://d3pdevdjgqg7a" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
 [ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="3_sbjw1"]
+[ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="3_vqpv8"]
+[ext_resource type="PackedScene" uid="uid://b5470ita3oy35" path="res://Scenes/PoliceBot.tscn" id="4_0edg3"]
+[ext_resource type="PackedScene" uid="uid://co7446jwa8k46" path="res://Scenes/Teleporter.tscn" id="5_dd3mb"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
@@ -31,12 +33,16 @@ mesh = SubResource("PlaneMesh_kax53")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0.92383, 7.44383e-18, -0.997838, -0.0657166, 0, 3.79025, 31.5465)
 
-[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("hacked_object")]
-script = ExtResource("1_otp8b")
-hacked_object = NodePath("../PlayerRobot")
-
 [node name="Car" parent="." instance=ExtResource("3_sbjw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106649, 2.71056, 0.0276356)
 
 [node name="PlayerRobot" parent="." instance=ExtResource("1_mc7p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26309, 3.69914, 0)
+
+[node name="Player" parent="." node_paths=PackedStringArray("hacked_object") instance=ExtResource("3_vqpv8")]
+hacked_object = NodePath("../PlayerRobot")
+
+[node name="policebot" parent="." instance=ExtResource("4_0edg3")]
+
+[node name="Teleporter" parent="." instance=ExtResource("5_dd3mb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342931, 10.1139)
