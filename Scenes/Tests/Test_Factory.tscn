@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="10_lcvpr"]
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="12_e85xm"]
 [ext_resource type="Material" uid="uid://dsfu6ywc8olxm" path="res://Assets/robot/Black.tres" id="12_vxaxg"]
-[ext_resource type="PackedScene" uid="uid://b73pcoed0igw3" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
-[ext_resource type="PackedScene" uid="uid://6re2bnk6kdvf" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
+[ext_resource type="PackedScene" uid="uid://d3pdevdjgqg7a" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
+[ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u1id3"]
 

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://by3pyjr8x63kb"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://Scripts/StateMachine/player_robot_state_machine.gd" id="1_wcs3l"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/SubStates/player_idle_state.gd" id="2_ktofj"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/SubStates/player_moving_script.gd" id="3_rr1rt"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/SubStates/player_jumping_state.gd" id="4_tmsxr"]
-[ext_resource type="Script" path="res://Scripts/StateMachine/SuperStates/player_in_air_state.gd" id="5_ss44e"]
+[ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot_state_machine.gd" id="1_wcs3l"]
+[ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/SubStates/player_idle_state.gd" id="2_ktofj"]
+[ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/SubStates/player_moving_script.gd" id="3_rr1rt"]
+[ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/SubStates/player_jumping_state.gd" id="4_tmsxr"]
+[ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/SuperStates/player_in_air_state.gd" id="5_ss44e"]
 
 [node name="PlayerRobotStateMachine" type="Node" node_paths=PackedStringArray("idle", "moving", "jumping", "in_air")]
 script = ExtResource("1_wcs3l")
