@@ -74,4 +74,4 @@ mesh = SubResource("ArrayMesh_dorqq")
 skeleton = NodePath("")
 
 [node name="Spawn_Location" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.35492, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 4.5, 2.08165e-12)
