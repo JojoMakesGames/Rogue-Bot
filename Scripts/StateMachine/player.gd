@@ -32,7 +32,7 @@ func change_hacked_object(new_hacked_object: Node3D):
 	new_hacked_object.look_at(hacked_object.position)
 	hacked_object = new_hacked_object
 	hacked_object.hacked = true
-	hacked_object.mesh.mesh.material.albedo_color = hacked_object.base_color
+	#hacked_object.mesh.mesh.material.albedo_color = hacked_object.base_color
 	camera = new_hacked_object.get_node("Camera3D")
 	camera.make_current()
 	
@@ -46,11 +46,11 @@ func scan_for_hackables():
 	var result = space_state.intersect_ray(query)
 	if "collider" in result:
 		current_scan = result["collider"].get_parent() as Node3D
-		var mesh: Mesh = current_scan.mesh.mesh
-		mesh.material.albedo_color = Color(255,0,0)
+		#var mesh: Mesh = current_scan.mesh.mesh
+		#mesh.material.albedo_color = Color(255,0,0)
 		if Input.is_action_just_pressed("hack"):
 			change_hacked_object(current_scan)
 	elif current_scan:
-		current_scan.mesh.mesh.material.albedo_color = current_scan.base_color
+		#current_scan.mesh.mesh.material.albedo_color = current_scan.base_color
 		current_scan = null
 
