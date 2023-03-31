@@ -24,9 +24,7 @@ func physics_update(delta):
 
 func handle_input(delta):
 	super.handle_input(delta)
-	var forward = player.global_transform.basis.z
-	var right = player.global_transform.basis.x
-	direction = (forward * input_dir.y + right * input_dir.x).normalized()
+	direction = player.input_direction
 	if player.velocity == Vector3.ZERO and direction == Vector3.ZERO:
 		state_machine.change_state(state_machine.idle)
 	if !player.is_on_floor():

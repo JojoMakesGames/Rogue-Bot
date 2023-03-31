@@ -6,12 +6,11 @@ class_name Player
 @export var hacked_object: PhysicsBody3D
 var mouse_delta: Vector2
 var current_scan: Node3D
+var direction: Vector3
 
 func _ready():
-	hacked_object.hacked = true
-	position = hacked_object.position
 	camera.target = self
-	camera.offset = hacked_object.camera_placement.position
+	change_hacked_object(hacked_object)	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func _physics_process(_delta):
@@ -24,13 +23,20 @@ func _process(delta):
   
 	rotation_degrees.y -= mouse_delta.x * 10.0 * delta
 	mouse_delta = Vector2()
+	var input_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
+	var forward = global_transform.basis.z
+	var right = global_transform.basis.x
+	direction = (forward * input_dir.y + right * input_dir.x).normalized()
+	direction.y = 0
+	hacked_object.input_direction = direction
 	
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
 
 func change_hacked_object(new_hacked_object: Node3D):
-	hacked_object.hacked = false
+	if hacked_object != null:
+		hacked_object.hacked = false
 	hacked_object = new_hacked_object
 	hacked_object.hacked = true
 	camera.offset = hacked_object.camera_placement.position

@@ -8,6 +8,7 @@ class_name PlayerRobot
 @onready var animations: AnimationPlayer = $Robot/AnimationPlayer
 @onready var camera_placement: Node3D = $CameraPlacement
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") 
+var input_direction: Vector3
 
 @export var SPEED: float
 @export var JUMP_VELOCITY: float
@@ -25,3 +26,5 @@ func _physics_process(delta):
 func _process(delta):
 	if hacked:
 		state_machine.state.handle_input(delta)
+		if input_direction != Vector3.ZERO:
+			look_at(position + input_direction)

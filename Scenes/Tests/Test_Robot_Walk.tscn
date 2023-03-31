@@ -45,4 +45,4 @@ hacked_object = NodePath("../PlayerRobot")
 [node name="policebot" parent="." instance=ExtResource("4_0edg3")]
 
 [node name="Teleporter" parent="." instance=ExtResource("5_dd3mb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.1139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342931, 10.1139)
