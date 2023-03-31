@@ -3,7 +3,7 @@ extends VehicleBody3D
 #@onready var mesh: MeshInstance3D = $MeshInstance3D
 var hacked: bool
 var base_color: Color
-
+var input_direction: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

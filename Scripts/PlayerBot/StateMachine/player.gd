@@ -39,7 +39,8 @@ func change_hacked_object(new_hacked_object: Node3D):
 		hacked_object.hacked = false
 	hacked_object = new_hacked_object
 	hacked_object.hacked = true
-	camera.offset = hacked_object.camera_placement.position
+	camera.offset = hacked_object.get_node("CameraPlacement").position
+	#camera.offset = hacked_object.camera_placement.position
 	#hacked_object.mesh.mesh.material.albedo_color = hacked_object.base_color
 	
 func scan_for_hackables():
