@@ -18,7 +18,7 @@ size = Vector2(100, 100)
 [node name="Node3D" type="Node3D"]
 
 [node name="PlayerRobot2" parent="." instance=ExtResource("1_mc7p2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.21816, 2.98003, 0)
+transform = Transform3D(0.999999, -0.000961596, 0.00037555, 0.000961698, 0.999999, -0.00026015, -0.000375287, 0.00026053, 1, -9.21816, 2.98003, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2
@@ -34,7 +34,7 @@ mesh = SubResource("PlaneMesh_kax53")
 transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0.92383, 7.44383e-18, -0.997838, -0.0657166, 0, 3.79025, 31.5465)
 
 [node name="Car" parent="." instance=ExtResource("3_sbjw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71056, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106649, 2.71056, 0.0276356)
 
 [node name="PlayerRobot" parent="." instance=ExtResource("1_mc7p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26309, 3.69914, 0)
