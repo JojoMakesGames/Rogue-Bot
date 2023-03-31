@@ -23,10 +23,7 @@ func physics_update(delta):
 	player.move_and_slide()
 
 func handle_input(delta):
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var forward = player.global_transform.basis.z
-	var right = player.global_transform.basis.x
-	direction = (forward * input_dir.y + right * input_dir.x).normalized()
+	direction = player.input_direction
 	super.handle_input(delta)
 	if player.is_on_floor():
 		state_machine.change_state(state_machine.idle)
