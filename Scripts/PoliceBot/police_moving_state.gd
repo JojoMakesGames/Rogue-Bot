@@ -3,10 +3,6 @@ class_name PoliceMovingState
 		
 var direction
 
-func enter():
-	super.enter()
-	self.animation.play("Robot_Running")
-
 func physics_update(delta):
 	super.physics_update(delta)
 	if direction:
@@ -21,6 +17,6 @@ func physics_update(delta):
 func handle_input(delta):
 	super.handle_input(delta)
 	direction = player.input_direction
-	if player.velocity == Vector3.ZERO and direction == Vector3.ZERO:
-		state_machine.change_state(state_machine.idle)
+	#if player.velocity == Vector3.ZERO and direction == Vector3.ZERO:
+		#state_machine.change_state(state_machine.idle)
 

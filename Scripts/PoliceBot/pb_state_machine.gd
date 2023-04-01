@@ -2,12 +2,9 @@ extends PlayerStateMachine
 
 class_name PoliceStateMachine
 
-@export var idle: PlayerIdleState
-@export var moving: PlayerMovingState
-@export var jumping: PlayerJumpingState
-@export var in_air: PlayerInAirState
+@export var moving: PoliceMovingState
 
-@export var player: PlayerRobot
+@export var player: PoliceBot
 @export var animation_player: AnimationPlayer
 
 func _ready():
