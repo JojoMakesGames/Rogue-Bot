@@ -1,4 +1,4 @@
-extends PlayerRobotState
+extends PlayerState
 class_name PlayerGroundedState
 
 func enter():
