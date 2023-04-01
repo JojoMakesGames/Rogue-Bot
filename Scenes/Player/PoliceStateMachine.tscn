@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://6m04rkblxtb8"]
+
+[ext_resource type="Script" path="res://Scripts/PoliceBot/pb_state_machine.gd" id="1_d8tog"]
+[ext_resource type="Script" path="res://Scripts/PoliceBot/police_moving_state.gd" id="2_eclla"]
+
+[node name="PoliceStateMachine" type="Node" node_paths=PackedStringArray("moving")]
+script = ExtResource("1_d8tog")
+moving = NodePath("Moving")
+
+[node name="Moving" type="Node3D" parent="."]
+script = ExtResource("2_eclla")

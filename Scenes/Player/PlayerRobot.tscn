@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3pdevdjgqg7a"]
+[gd_scene load_steps=8 format=3 uid="uid://cwjd6mwvvsa62"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot.gd" id="1_ewkii"]
-[ext_resource type="PackedScene" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
+[ext_resource type="PackedScene" uid="uid://dcgwcwymy5weo" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="3_lofgt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wxfh"]

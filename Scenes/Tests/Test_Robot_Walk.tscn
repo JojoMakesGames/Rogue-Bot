@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgsles7y11rwc"]
+[gd_scene load_steps=9 format=3 uid="uid://brmaxt4griigy"]
 
-[ext_resource type="PackedScene" uid="uid://d3pdevdjgqg7a" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
+[ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
 [ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="3_sbjw1"]
 [ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="3_vqpv8"]
 [ext_resource type="PackedScene" uid="uid://b5470ita3oy35" path="res://Scenes/PoliceBot.tscn" id="4_0edg3"]
