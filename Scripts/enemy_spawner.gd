@@ -1,8 +1,7 @@
 extends Node3D
 
-@export var enemy: PackedScene
+var enemy: PackedScene = preload("res://Scenes/PoliceBot.tscn")
 @onready var spawn_location: Node3D = $Spawn_Location
-
 
 func _on_timer_timeout():
 	var instance = enemy.instantiate()
