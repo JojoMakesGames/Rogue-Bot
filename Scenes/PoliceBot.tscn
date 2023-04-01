@@ -494,5 +494,3 @@ transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08188
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.99736, 6.99099e-16, 0.00960902, 6.92397e-16, 0.997406, -6.991e-16, -0.00960902, -6.92396e-16, -0.99736, -3.82772e-16, -1.09744, 3.82772e-16)
 shape = SubResource("BoxShape3D_ryng3")
-
-[node name="Mesh" type="Node" parent="."]
