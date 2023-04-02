@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://0oy68ot16oar"]
+
+[ext_resource type="PackedScene" uid="uid://c7cp5dq2i60r2" path="res://Assets/props/machine_wirelessCable.glb" id="1_spd0m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4vb5o"]
+size = Vector3(0.81192, 1.07132, 0.547561)
+
+[node name="Machine_Wireless" type="StaticBody3D"]
+transform = Transform3D(1.80315, 0, 0, 0, 1.80315, 0, 0, 0, 1.80315, 30.5409, -1.63633, 11.9816)
+
+[node name="machine_wirelessCable" parent="." instance=ExtResource("1_spd0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0598316, 0.265595, 0)
+shape = SubResource("BoxShape3D_4vb5o")
+
+[editable path="machine_wirelessCable"]

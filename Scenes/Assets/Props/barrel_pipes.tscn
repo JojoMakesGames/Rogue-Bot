@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://brspva8g7wkq"]
+
+[ext_resource type="PackedScene" uid="uid://dw7iixq7bttbi" path="res://Assets/props/machine_barrel.glb" id="1_cpet0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u4roc"]
+size = Vector3(0.616446, 0.631621, 0.661087)
+
+[node name="Barrel_Pipes" type="StaticBody3D"]
+transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 23.5174, -1.65698, 18.1151)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
+shape = SubResource("BoxShape3D_u4roc")
+
+[node name="machine_barrel" parent="." instance=ExtResource("1_cpet0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+
+[editable path="machine_barrel"]
