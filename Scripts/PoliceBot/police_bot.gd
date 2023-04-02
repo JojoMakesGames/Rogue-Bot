@@ -36,13 +36,19 @@ func _physics_process(delta):
 		move_and_slide()
 		
 func shoot():
+	var parent = get_parent()
+	var direction = (-global_transform.basis.z).normalized()
 	var laser1: RigidBody3D = laser.instantiate()
-	laser1.position = left_gun.position
-	add_child(laser1)
+	laser1.position = left_gun.global_position
+	parent.add_child(laser1)
+	laser1.apply_force(direction * 5000)
 	
 	await get_tree().create_timer(.2).timeout
 	var laser2: RigidBody3D = laser.instantiate()
-	laser2.position = right_gun.position
-	add_child(laser2)
+	laser2.position = right_gun.global_position
+	parent.add_child(laser2)
+	laser2.apply_force(direction * 5000)
+	
+	await get_tree().create_timer(.2).timeout
 	
 	finished_shooting.emit()
