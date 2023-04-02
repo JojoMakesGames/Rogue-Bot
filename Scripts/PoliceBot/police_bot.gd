@@ -6,6 +6,9 @@ class_name PoliceBot
 var hacked: bool
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var state_machine: PoliceStateMachine = $PoliceStateMachine
+@onready var left_gun: Node3D = $LeftGun
+@onready var right_gun: Node3D = $RightGun
+@export var laser: PackedScene
 var input_direction: Vector3
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,3 +32,16 @@ func _physics_process(delta):
 		velocity.x = SPEED
 
 		move_and_slide()
+		
+func shoot():
+	var laser1: RigidBody3D = laser.instantiate()
+	laser1.position = left_gun.position
+	add_child(laser1)
+	
+	await get_tree().create_timer(.2).timeout
+	var laser2: RigidBody3D = laser.instantiate()
+	laser2.position = right_gun.position
+	add_child(laser2)
+	
+	
+	
