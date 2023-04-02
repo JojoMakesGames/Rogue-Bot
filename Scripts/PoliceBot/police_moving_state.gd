@@ -1,6 +1,9 @@
 extends PlayerState
 class_name PoliceMovingState
 
+func enter():
+	self.animation.play("Walk")
+
 func physics_update(delta):
 	super.physics_update(delta)
 	if player.input_direction:

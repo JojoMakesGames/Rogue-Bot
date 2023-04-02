@@ -8,6 +8,7 @@ var hacked: bool
 @onready var state_machine: PoliceStateMachine = $PoliceStateMachine
 @onready var left_gun: Node3D = $LeftGun
 @onready var right_gun: Node3D = $RightGun
+@onready var animations: AnimationPlayer = $policebot/AnimationPlayer
 @export var laser: PackedScene
 var input_direction: Vector3
 
