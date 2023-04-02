@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtqtqo8864alt"]
+
+[ext_resource type="PackedScene" uid="uid://b322bu2x5bcuq" path="res://Assets/props/machine_generatorLarge.glb" id="1_fabyi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bp24m"]
+
+[node name="Generator" type="StaticBody3D"]
+transform = Transform3D(2.17077, 0, 0, 0, 2.17077, 0, 0, 0, 2.17077, 28.1509, -1.63633, 15.1695)
+
+[node name="machine_generatorLarge" parent="." instance=ExtResource("1_fabyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192836, 0)
+shape = SubResource("BoxShape3D_bp24m")
+
+[editable path="machine_generatorLarge"]
