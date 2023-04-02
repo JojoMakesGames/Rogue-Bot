@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://clyvcjuyuws5j"]
+
+[ext_resource type="FontFile" uid="uid://ccia6xrthj4m" path="res://Scenes/Assets/Orbitron-Medium.ttf" id="1_6ghbx"]
+
+[node name="TitleScreen_Menu" type="Node2D"]
+position = Vector2(1153, 661)
+
+[node name="Button_Play" type="Button" parent="."]
+offset_left = -794.0
+offset_top = -293.0
+offset_right = -464.0
+offset_bottom = -185.0
+theme_override_fonts/font = ExtResource("1_6ghbx")
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="Button_Cont" type="Button" parent="."]
+offset_left = -794.0
+offset_top = -147.0
+offset_right = -464.0
+offset_bottom = -39.0
+theme_override_fonts/font = ExtResource("1_6ghbx")
+theme_override_font_sizes/font_size = 40
+text = "CONTROLS"
+
+[node name="Button_Quit" type="Button" parent="."]
+offset_left = -794.0
+offset_top = 47.0
+offset_right = -464.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("1_6ghbx")
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -878.0
+offset_top = -462.0
+offset_right = -13.0
+offset_bottom = -308.0
+theme_override_fonts/normal_font = ExtResource("1_6ghbx")
+theme_override_font_sizes/normal_font_size = 80
+text = "ROGUEBOT"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

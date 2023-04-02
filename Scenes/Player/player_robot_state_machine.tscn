@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcgwcwymy5weo"]
+[gd_scene load_steps=6 format=3 uid="uid://by3pyjr8x63kb"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot_state_machine.gd" id="1_wcs3l"]
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/SubStates/player_idle_state.gd" id="2_ktofj"]
