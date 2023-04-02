@@ -7,6 +7,7 @@ var is_ability_done: bool = false
 func enter():
 	is_ability_done = false
 	player.shoot()
+	self.animation.play("Shoot1")
 	if !player.finished_shooting.is_connected(_on_policebot_finished_shooting):
 		player.finished_shooting.connect(_on_policebot_finished_shooting)
 
