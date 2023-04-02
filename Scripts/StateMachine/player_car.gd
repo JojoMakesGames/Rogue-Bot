@@ -13,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if hacked:
-		steering = Input.get_axis("right", "left") * 0.4
+		steering = Input.get_axis("right", "left") * 0.8
 		engine_force = Input.get_axis("down", "up") * 100
 	
 func handle_camera(mouse_delta, delta):

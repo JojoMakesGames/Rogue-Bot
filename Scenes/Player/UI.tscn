@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlmug7gcaipmb"]
+
+[ext_resource type="Texture2D" uid="uid://buosafhqeieyo" path="res://Assets/UI/Ui_policebot.png" id="2_vkbip"]
+[ext_resource type="Texture2D" uid="uid://bnn8y4f5b7xti" path="res://Assets/UI/Ui_playerbot.png" id="3_0ebvo"]
+[ext_resource type="Texture2D" uid="uid://dq1nllc1tw5cc" path="res://Assets/UI/Ui_carbot.png" id="4_6tjsx"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health" type="Node2D" parent="."]
+position = Vector2(305, 928)
+scale = Vector2(1.36878, 1.27683)
+
+[node name="Health" type="ProgressBar" parent="health"]
+anchors_preset = -1
+anchor_left = 0.141
+anchor_top = 0.88
+anchor_right = 0.141
+anchor_bottom = 0.88
+offset_left = 86.2499
+offset_top = -83.7499
+offset_right = 144.25
+offset_bottom = 93.2501
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="UiPolicebot" type="Sprite2D" parent="health"]
+visible = false
+position = Vector2(-20.2501, 2.12512)
+scale = Vector2(0.3, 0.402423)
+texture = ExtResource("2_vkbip")
+
+[node name="UiPlayerbot" type="Sprite2D" parent="health"]
+position = Vector2(-25.5701, 2.34955)
+scale = Vector2(0.579432, 0.532954)
+texture = ExtResource("3_0ebvo")
+
+[node name="UiCarbot" type="Sprite2D" parent="health"]
+visible = false
+position = Vector2(-20, 3)
+scale = Vector2(0.325859, 0.434309)
+texture = ExtResource("4_6tjsx")

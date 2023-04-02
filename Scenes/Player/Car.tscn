@@ -308,7 +308,7 @@ mesh = SubResource("ArrayMesh_n46ko")
 skeleton = NodePath("")
 
 [node name="wheel_BR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(0.999992, -0.00384436, -0.000883009, 0.00384196, 0.999989, -0.0027055, 0.000893409, 0.00270208, 0.999996, 0.299327, -0.115466, 0.760265)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.299327, -0.115466, 0.760265)
 use_as_traction = true
 wheel_friction_slip = 1.0
 suspension_travel = 0.1
@@ -318,11 +318,12 @@ damping_compression = 0.6
 damping_relaxation = 0.8
 
 [node name="wheel_backRight" type="MeshInstance3D" parent="wheel_BR"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_n46ko")
 skeleton = NodePath("")
 
 [node name="wheel_FR" type="VehicleWheel3D" parent="."]
-transform = Transform3D(0.999992, -0.00384436, -0.000883009, 0.00384196, 0.999989, -0.0027055, 0.000893409, 0.00270208, 0.999996, 0.300669, -0.111354, -0.759729)
+transform = Transform3D(-0.999994, 0.00349065, -8.74222e-08, 0.00349063, 0.999988, -0.00349065, -1.20972e-05, -0.00349063, -0.999994, 0.300669, -0.111354, -0.759729)
 use_as_steering = true
 wheel_friction_slip = 1.0
 suspension_travel = 0.1
@@ -332,6 +333,7 @@ damping_compression = 0.6
 damping_relaxation = 0.8
 
 [node name="wheel_frontRight" type="MeshInstance3D" parent="wheel_FR"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_n46ko")
 skeleton = NodePath("")
 
