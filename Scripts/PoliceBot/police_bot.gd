@@ -11,6 +11,8 @@ var hacked: bool
 @export var laser: PackedScene
 var input_direction: Vector3
 
+signal finished_shooting
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -43,5 +45,4 @@ func shoot():
 	laser2.position = right_gun.position
 	add_child(laser2)
 	
-	
-	
+	finished_shooting.emit()

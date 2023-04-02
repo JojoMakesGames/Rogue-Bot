@@ -17,5 +17,5 @@ func handle_input(delta):
 	if player.velocity == Vector3.ZERO and player.input_direction == Vector3.ZERO:
 		state_machine.change_state(state_machine.idle)
 	elif Input.is_action_just_pressed("shoot"):
-		print("pew")
+		state_machine.change_state(state_machine.shooting)
 

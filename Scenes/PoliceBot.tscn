@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/PoliceBot/police_bot.gd" id="1_q20i3"]
 [ext_resource type="PackedScene" uid="uid://6m04rkblxtb8" path="res://Scenes/Player/PoliceStateMachine.tscn" id="2_4gt1v"]
-[ext_resource type="PackedScene" uid="uid://dxiu050l1dr0g" path="res://Scenes/Player/LaserShot.tscn" id="2_htpk0"]
+[ext_resource type="PackedScene" uid="uid://by71sgyloj4wm" path="res://Scenes/Player/LaserShot.tscn" id="2_htpk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjrl5"]
 resource_name = "Branco"
