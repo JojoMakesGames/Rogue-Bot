@@ -3,6 +3,8 @@ extends PlayerStateMachine
 class_name PoliceStateMachine
 
 @export var moving: PoliceMovingState
+@export var idle: PoliceIdleState
+@export var shooting: PoliceShootingState
 
 @export var player: PoliceBot
 @export var animation_player: AnimationPlayer

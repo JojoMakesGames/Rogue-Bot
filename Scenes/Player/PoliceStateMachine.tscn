@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://6m04rkblxtb8"]
+[gd_scene load_steps=5 format=3 uid="uid://6m04rkblxtb8"]
 
 [ext_resource type="Script" path="res://Scripts/PoliceBot/pb_state_machine.gd" id="1_d8tog"]
 [ext_resource type="Script" path="res://Scripts/PoliceBot/police_moving_state.gd" id="2_eclla"]
+[ext_resource type="Script" path="res://Scripts/PoliceBot/police_idle_state.gd" id="2_py75y"]
+[ext_resource type="Script" path="res://Scripts/PoliceBot/police_shooting_state.gd" id="4_lpj8b"]
 
-[node name="PoliceStateMachine" type="Node" node_paths=PackedStringArray("moving")]
+[node name="PoliceStateMachine" type="Node" node_paths=PackedStringArray("moving", "idle", "shooting")]
 script = ExtResource("1_d8tog")
-moving = NodePath("Moving")
+moving = NodePath("PoliceMovingState")
+idle = NodePath("PoliceIdleState")
+shooting = NodePath("PoliceShootingState")
 
-[node name="Moving" type="Node3D" parent="."]
+[node name="PoliceIdleState" type="Node" parent="."]
+script = ExtResource("2_py75y")
+
+[node name="PoliceMovingState" type="Node" parent="."]
 script = ExtResource("2_eclla")
+
+[node name="PoliceShootingState" type="Node" parent="."]
+script = ExtResource("4_lpj8b")

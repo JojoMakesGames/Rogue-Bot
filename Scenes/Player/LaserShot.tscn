@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://by71sgyloj4wm"]
+
+[ext_resource type="Script" path="res://Scripts/laser_shot.gd" id="1_vdn03"]
+[ext_resource type="AudioStream" uid="uid://yvfxo7vurch8" path="res://Assets/SFX/Laser1.ogg" id="2_fanfq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cml0"]
+albedo_color = Color(0.584314, 0.0784314, 0.266667, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gtii3"]
+material = SubResource("StandardMaterial3D_7cml0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7anad"]
+
+[node name="LaserShot" type="RigidBody3D"]
+collision_layer = 9
+collision_mask = 11
+gravity_scale = 2.66454e-15
+script = ExtResource("1_vdn03")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_gtii3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7anad")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_fanfq")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
