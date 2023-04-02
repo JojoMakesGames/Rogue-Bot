@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cosqsbng5l4dd"
-path.etc2="res://.godot/imported/Teleport_normal.png-cf59deb239bd9a9f22114f13c68b0cee.etc2.ctex"
+path.s3tc="res://.godot/imported/Teleport_normal.png-cf59deb239bd9a9f22114f13c68b0cee.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://teleport/textures/Teleport_normal.png"
-dest_files=["res://.godot/imported/Teleport_normal.png-cf59deb239bd9a9f22114f13c68b0cee.etc2.ctex"]
+dest_files=["res://.godot/imported/Teleport_normal.png-cf59deb239bd9a9f22114f13c68b0cee.s3tc.ctex"]
 
 [params]
 
