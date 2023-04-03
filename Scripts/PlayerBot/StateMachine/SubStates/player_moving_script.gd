@@ -9,7 +9,7 @@ var direction
 
 func enter():
 	super.enter()
-	self.animation.play("Robot_Running")
+	self.animation.play("Robot_Run")
 
 func physics_update(delta):
 	super.physics_update(delta)
