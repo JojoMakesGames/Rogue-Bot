@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name PoliceBot
 
 @export var SPEED = 2
+@export var SHOT_SPEED = 500
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var state_machine: PoliceStateMachine = $PoliceStateMachine
 @onready var left_gun: Node3D = $LeftGun
@@ -30,11 +31,12 @@ func _process(delta):
 			look_at(position + input_direction)
 
 func _physics_process(delta):
-	if player:
-		state_machine.state.physics_update(delta)
-	elif !is_on_floor(): 
+	if !is_on_floor(): 
 		velocity.y = gravity * delta * -10
 		move_and_slide()
+	elif player:
+		state_machine.state.physics_update(delta)
+	
 	else:
 		velocity.x = 5
 		move_and_slide()
@@ -45,13 +47,13 @@ func shoot(callback: Callable):
 	var laser1: RigidBody3D = laser.instantiate()
 	laser1.position = left_gun.global_position
 	parent.add_child(laser1)
-	laser1.apply_force(looking_direction * 5000)
+	laser1.apply_force(looking_direction * SHOT_SPEED)
 	
 	await get_tree().create_timer(.2).timeout
 	var laser2: RigidBody3D = laser.instantiate()
 	laser2.position = right_gun.global_position
 	parent.add_child(laser2)
-	laser2.apply_force(looking_direction * 5000)
+	laser2.apply_force(looking_direction * SHOT_SPEED)
 	
 	await get_tree().create_timer(.2).timeout
 	

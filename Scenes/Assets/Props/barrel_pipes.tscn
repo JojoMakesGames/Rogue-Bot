@@ -1,18 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://brspva8g7wkq"]
+[gd_scene load_steps=5 format=3 uid="uid://brspva8g7wkq"]
 
+[ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_bnahk"]
 [ext_resource type="PackedScene" uid="uid://dw7iixq7bttbi" path="res://Assets/props/machine_barrel.glb" id="1_cpet0"]
+[ext_resource type="AudioStream" uid="uid://gxhg8mujwhdb" path="res://Assets/SFX/explosion1.wav" id="3_7vcr5"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u4roc"]
-size = Vector3(0.616446, 0.631621, 0.661087)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_whk8w"]
+radius = 0.494929
+height = 1.35661
 
 [node name="Barrel_Pipes" type="StaticBody3D"]
-transform = Transform3D(2.7, 0, 0, 0, 2.7, 0, 0, 0, 2.7, 23.5174, -1.65698, 18.1151)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_bnahk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
-shape = SubResource("BoxShape3D_u4roc")
+shape = SubResource("CapsuleShape3D_whk8w")
 
 [node name="machine_barrel" parent="." instance=ExtResource("1_cpet0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
+
+[node name="machine_barrel2" parent="machine_barrel/tmpParent" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
+shape = SubResource("CapsuleShape3D_whk8w")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("3_7vcr5")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="machine_barrel"]

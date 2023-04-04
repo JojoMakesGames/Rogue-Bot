@@ -37,15 +37,15 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_vgi13")
 
 [node name="LaserShot" type="RigidBody3D"]
-collision_layer = 8
+collision_layer = 9
 collision_mask = 8
+mass = 1.1
 physics_material_override = SubResource("PhysicsMaterial_0m8uc")
 gravity_scale = 2.66454e-15
 script = ExtResource("1_vdn03")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0596153, 0, 0, 0, 0.0596153, 0, 0, 0, 0.0596153, 0, 0, 0)
-visible = false
 mesh = SubResource("SphereMesh_gtii3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -56,6 +56,7 @@ stream = ExtResource("2_fanfq")
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="LaserTrail2" type="GPUParticles3D" parent="."]

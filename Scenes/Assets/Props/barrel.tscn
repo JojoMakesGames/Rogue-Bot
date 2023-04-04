@@ -1,29 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi3m7ksxqcdau"]
+[gd_scene load_steps=7 format=3 uid="uid://bi3m7ksxqcdau"]
 
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_7kiax"]
 [ext_resource type="PackedScene" uid="uid://dy4y0hggnklc0" path="res://Assets/props/barrel.glb" id="1_kn2f0"]
+[ext_resource type="AudioStream" uid="uid://gxhg8mujwhdb" path="res://Assets/SFX/explosion1.wav" id="3_4v1xp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tppq3"]
+bounce = 0.2
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_1tcb6"]
-height = 0.332625
-radius = 0.167649
+height = 0.253481
+radius = 0.0995621
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_n43tr"]
 height = 0.251359
 radius = 0.107746
 
-[node name="Barrel" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
-transform = Transform3D(3.92705, 0, 0, 0, 3.92705, 0, 0, 0, 3.92705, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+[node name="Barrel" type="RigidBody3D" node_paths=PackedStringArray("mesh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_tppq3")
 script = ExtResource("1_7kiax")
 POINTS = 2
 mesh = NodePath("barrel/tmpParent/barrel2")
 
 [node name="barrel" parent="." instance=ExtResource("1_kn2f0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="barrel2" parent="barrel/tmpParent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 
 [node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 collision_layer = 8
 collision_mask = 8
 
@@ -32,8 +40,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124491, 0)
 shape = SubResource("CylinderShape3D_1tcb6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124491, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.499654, 0)
 shape = SubResource("CylinderShape3D_n43tr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4v1xp")
+volume_db = -5.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 

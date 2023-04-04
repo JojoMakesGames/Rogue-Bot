@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brmaxt4griigy"]
+[gd_scene load_steps=11 format=3 uid="uid://brmaxt4griigy"]
 
 [ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
 [ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="3_sbjw1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5470ita3oy35" path="res://Scenes/PoliceBot.tscn" id="4_0edg3"]
 [ext_resource type="PackedScene" uid="uid://co7446jwa8k46" path="res://Scenes/Teleporter.tscn" id="5_dd3mb"]
 [ext_resource type="PackedScene" uid="uid://bi3m7ksxqcdau" path="res://Scenes/Assets/Props/barrel.tscn" id="6_wfg8a"]
+[ext_resource type="PackedScene" uid="uid://brspva8g7wkq" path="res://Scenes/Assets/Props/barrel_pipes.tscn" id="7_0hpkk"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
@@ -49,4 +50,7 @@ hacked_object = NodePath("../PlayerRobot")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342931, 10.1139)
 
 [node name="Barrel" parent="." instance=ExtResource("6_wfg8a")]
-transform = Transform3D(3.92705, 0, 0, 0, 3.92705, 0, 0, 0, 3.92705, 3.99405, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99405, 1.94473, 2.08165e-12)
+
+[node name="Barrel_Pipes" parent="." instance=ExtResource("7_0hpkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74795, 0, 0)

@@ -6,7 +6,7 @@ var is_ability_done: bool = false
 
 func enter():
 	is_ability_done = false
-	self.animation.play("Shoot1")	
+	self.animation.play("Shoot1")
 	player.shoot(_finished_shooting)
 
 func handle_input(delta):

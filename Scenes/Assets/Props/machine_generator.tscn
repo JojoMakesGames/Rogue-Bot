@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn2rq3ivx3mpk"]
+[gd_scene load_steps=4 format=3 uid="uid://bn2rq3ivx3mpk"]
 
 [ext_resource type="PackedScene" uid="uid://dh3xn8utdl8or" path="res://Assets/props/machine_generator.glb" id="1_71pm6"]
+[ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_m133l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt8yi"]
 size = Vector3(0.634443, 0.556326, 0.547923)
 
-[node name="Machine_Generator" type="StaticBody3D"]
-transform = Transform3D(2.67533, 0, 0, 0, 2.67533, 0, 0, 0, 2.67533, 26.4098, -1.63633, 12.0348)
+[node name="Machine_Generator" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
+script = ExtResource("1_m133l")
+mesh = NodePath("machine_generator/tmpParent/machine_generator2")
 
 [node name="machine_generator" parent="." instance=ExtResource("1_71pm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
