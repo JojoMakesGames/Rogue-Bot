@@ -24,7 +24,7 @@ func destroy():
 	var explode = explosion.instantiate() as Node3D
 	add_child(explode)
 	explode.global_position = global_position
-	tween.tween_property(explode, "scale", Vector3(4,4,4), 1)
+	tween.tween_property(explode, "scale", Vector3(5,5,5), 1)
 	tween.tween_interval(1)
 	tween.set_parallel(false)
 	
