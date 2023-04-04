@@ -9,10 +9,10 @@ var hacked: bool
 @onready var left_gun: Node3D = $LeftGun
 @onready var right_gun: Node3D = $RightGun
 @onready var animations: AnimationPlayer = $policebot/AnimationPlayer
+@export var target: Player
 @export var laser: PackedScene
 var input_direction: Vector3
-
-signal finished_shooting
+var movement_delta: float
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -29,14 +29,15 @@ func _process(delta):
 func _physics_process(delta):
 	if hacked:
 		state_machine.state.physics_update(delta)
-	else:
-		if not is_on_floor():
-			velocity.y -= gravity * delta
-		velocity.x = SPEED
-
+	elif !is_on_floor(): 
+		velocity.y = gravity * delta * -10
 		move_and_slide()
+	else:
+		velocity.x = 5
+		move_and_slide()
+
 		
-func shoot():
+func shoot(callback: Callable):
 	var parent = get_parent()
 	var direction = (-global_transform.basis.z).normalized()
 	var laser1: RigidBody3D = laser.instantiate()
@@ -52,4 +53,4 @@ func shoot():
 	
 	await get_tree().create_timer(.2).timeout
 	
-	finished_shooting.emit()
+	callback.call()
