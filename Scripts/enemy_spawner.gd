@@ -7,6 +7,6 @@ var enemy: PackedScene = preload("res://Scenes/PoliceBot.tscn")
 func _on_timer_timeout():
 	audio.play()
 	var instance = enemy.instantiate()
-	instance.global_position = spawn_location.global_position
 	var root = get_tree().get_root()
+	instance.position = spawn_location.global_position
 	root.add_child(instance)

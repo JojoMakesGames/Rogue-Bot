@@ -13,6 +13,7 @@ func _on_hitbox_body_entered(body):
 	destroy()
 	
 func destroy():
+	hitbox.visible = false
 	var tween = get_tree().create_tween()
 	tween.set_parallel(true)
 	if mesh:

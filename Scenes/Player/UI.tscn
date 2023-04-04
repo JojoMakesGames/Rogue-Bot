@@ -1,9 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlmug7gcaipmb"]
+[gd_scene load_steps=3 format=3 uid="uid://dlmug7gcaipmb"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_u8orw"]
-[ext_resource type="Texture2D" uid="uid://buosafhqeieyo" path="res://Assets/UI/Ui_policebot.png" id="2_vkbip"]
-[ext_resource type="Texture2D" uid="uid://bnn8y4f5b7xti" path="res://Assets/UI/Ui_playerbot.png" id="3_0ebvo"]
-[ext_resource type="Texture2D" uid="uid://dq1nllc1tw5cc" path="res://Assets/UI/Ui_carbot.png" id="4_6tjsx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0r3gm"]
 font_size = 100
@@ -36,24 +33,6 @@ offset_bottom = 93.2501
 value = 50.0
 fill_mode = 3
 show_percentage = false
-
-[node name="UiPolicebot" type="Sprite2D" parent="health"]
-visible = false
-position = Vector2(-20.2501, 2.12512)
-scale = Vector2(0.3, 0.402423)
-texture = ExtResource("2_vkbip")
-
-[node name="UiPlayerbot" type="Sprite2D" parent="health"]
-visible = false
-position = Vector2(-25.5701, 2.34955)
-scale = Vector2(0.579432, 0.532954)
-texture = ExtResource("3_0ebvo")
-
-[node name="UiCarbot" type="Sprite2D" parent="health"]
-visible = false
-position = Vector2(-20, 3)
-scale = Vector2(0.325859, 0.434309)
-texture = ExtResource("4_6tjsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="health"]
 position = Vector2(-26.5172, 4.30298)
