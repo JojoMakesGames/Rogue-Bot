@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="10_lcvpr"]
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="12_e85xm"]
 [ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
-[ext_resource type="PackedScene" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
+[ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
 [ext_resource type="PackedScene" uid="uid://b5b3poms6pdnc" path="res://Assets/city/roads/road_straight.glb" id="14_ob3e7"]
 [ext_resource type="PackedScene" uid="uid://cvigno8ob2wr0" path="res://Assets/city/roads/road_intersection.glb" id="15_i5ufm"]
 [ext_resource type="PackedScene" uid="uid://b5shpmu1j8hub" path="res://Assets/city/roads/road_crossroad.glb" id="16_mx64f"]
@@ -162,7 +162,7 @@ bones/46/scale = Vector3(1, 1, 1.00002)
 bones/47/rotation = Quaternion(0.277154, -3.12318e-07, 4.08035e-08, 0.960825)
 
 [node name="FootL_2" parent="Robot/RobotArmature/Skeleton3D" index="0"]
-transform = Transform3D(-1, 3.67965e-07, -4.36403e-06, -4.37366e-06, -0.0324215, 0.999474, 2.26284e-07, 0.999474, 0.0324213, 0.633527, 0.0141392, 0.187344)
+transform = Transform3D(-1, 3.67965e-07, -4.36403e-06, -4.37366e-06, -0.0324215, 0.999474, 2.26284e-07, 0.999474, 0.0324214, 0.633527, 0.0141392, 0.187344)
 bone_name = "Foot.L_end"
 bone_idx = 2
 
@@ -172,47 +172,47 @@ bone_name = "Head"
 bone_idx = 9
 
 [node name="ArmL" parent="Robot/RobotArmature/Skeleton3D" index="2"]
-transform = Transform3D(0.0121272, -0.912225, -0.40951, 0.213251, 0.402477, -0.890245, 0.976922, -0.076532, 0.199414, 2.64001, 2.17321, 0.275879)
+transform = Transform3D(0.0121274, -0.912226, -0.40951, 0.213251, 0.402477, -0.890245, 0.976923, -0.0765319, 0.199414, 2.64001, 2.17321, 0.275879)
 bone_name = "Index2.L"
 bone_idx = 24
 
 [node name="ShoulderL_2" parent="Robot/RobotArmature/Skeleton3D" index="3"]
-transform = Transform3D(0.0121241, -0.912225, -0.409512, 0.213246, 0.402479, -0.890246, 0.976924, -0.0765328, 0.199407, 2.52007, 2.22612, 0.265817)
+transform = Transform3D(0.0121243, -0.912225, -0.409511, 0.213245, 0.402479, -0.890246, 0.976924, -0.0765327, 0.199407, 2.52007, 2.22612, 0.265817)
 bone_name = "Index2.L_end"
 bone_idx = 25
 
 [node name="ArmR" parent="Robot/RobotArmature/Skeleton3D" index="4"]
-transform = Transform3D(-0.202694, 0.92426, 0.323509, -0.979219, -0.189086, -0.0733152, -0.00659147, -0.331647, 0.94338, -1.0604, 1.01984, 1.10437)
+transform = Transform3D(-0.202694, 0.92426, 0.323509, -0.979219, -0.189086, -0.0733152, -0.00659144, -0.331647, 0.94338, -1.0604, 1.01984, 1.10437)
 bone_name = "Thumb2.R"
 bone_idx = 40
 
 [node name="ShoulderR_2" parent="Robot/RobotArmature/Skeleton3D" index="5"]
-transform = Transform3D(-0.202692, 0.924259, 0.32351, -0.979219, -0.189084, -0.073313, -0.00658945, -0.331649, 0.943379, -0.943218, 0.995871, 1.06232)
+transform = Transform3D(-0.202692, 0.92426, 0.32351, -0.979219, -0.189085, -0.0733129, -0.00658942, -0.331649, 0.94338, -0.943219, 0.995871, 1.06232)
 bone_name = "Thumb2.R_end"
 bone_idx = 41
 
 [node name="LowerLegL_2" parent="Robot/RobotArmature/Skeleton3D" index="6"]
-transform = Transform3D(-0.180874, 0.973449, 0.14029, 0.538193, 0.217353, -0.814317, -0.82319, -0.0717902, -0.563237, -1.15346, 1.27357, 0.61692)
+transform = Transform3D(-0.180874, 0.97345, 0.140291, 0.538193, 0.217353, -0.814318, -0.82319, -0.07179, -0.563237, -1.15346, 1.27357, 0.61692)
 bone_name = "Index2.R"
 bone_idx = 44
 
 [node name="LegL" parent="Robot/RobotArmature/Skeleton3D" index="7"]
-transform = Transform3D(-0.180874, 0.973449, 0.14029, 0.538193, 0.217354, -0.814317, -0.82319, -0.0717907, -0.563237, -1.02547, 1.30214, 0.607481)
+transform = Transform3D(-0.180874, 0.973449, 0.140291, 0.538193, 0.217354, -0.814318, -0.82319, -0.0717906, -0.563237, -1.02547, 1.30214, 0.607481)
 bone_name = "Index2.R_end"
 bone_idx = 45
 
 [node name="LowerLegR_2" parent="Robot/RobotArmature/Skeleton3D" index="8"]
-transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.16446, -0.763648, -0.625065, -0.691514, -0.362126, -1.10925, 1.26553, 0.620001)
+transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.16446, -0.763648, -0.625065, -0.691515, -0.362126, -1.10925, 1.26553, 0.620001)
 bone_name = "Ring2.R"
 bone_idx = 48
 
 [node name="LegR" parent="Robot/RobotArmature/Skeleton3D" index="9"]
-transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.164459, -0.763648, -0.625064, -0.691515, -0.362126, -1.01677, 1.24391, 0.529084)
+transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.16446, -0.763648, -0.625065, -0.691515, -0.362126, -1.01677, 1.24391, 0.529084)
 bone_name = "Ring2.R_end"
 bone_idx = 49
 
 [node name="Torso_2" parent="Robot/RobotArmature/Skeleton3D" index="10"]
-transform = Transform3D(0.101816, -0.202931, 2.23517e-08, 0.202145, 0.101422, 0.0199568, -0.0178376, -0.00894957, 0.226162, -0.82569, 2.01812, 0.0402436)
+transform = Transform3D(0.101816, -0.202931, -3.42424e-11, 0.202145, 0.101422, 0.0199569, -0.0178376, -0.0089496, 0.226162, -0.82569, 2.01812, 0.0402436)
 bone_name = "Arm.R"
 bone_idx = 50
 

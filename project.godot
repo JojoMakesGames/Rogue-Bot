@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/Tests/Test_Robot_Walk.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ChaosTracker="*res://Scripts/chaos_tracker.gd"
+
 [display]
 
 window/size/viewport_width=2304

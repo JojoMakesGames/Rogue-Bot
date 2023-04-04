@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b816mm6itings"]
+[gd_scene load_steps=4 format=3 uid="uid://b816mm6itings"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player.gd" id="1_kdh8i"]
 [ext_resource type="Script" path="res://Scripts/player_camera.gd" id="2_oo81y"]
+[ext_resource type="PackedScene" uid="uid://dlmug7gcaipmb" path="res://Scenes/Player/UI.tscn" id="3_4iyew"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_kdh8i")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 script = ExtResource("2_oo81y")
+
+[node name="UI" parent="." instance=ExtResource("3_4iyew")]

@@ -14,8 +14,8 @@ material = SubResource("StandardMaterial3D_7cml0")
 [sub_resource type="SphereShape3D" id="SphereShape3D_7anad"]
 
 [node name="LaserShot" type="RigidBody3D"]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 8
+collision_mask = 8
 physics_material_override = SubResource("PhysicsMaterial_0m8uc")
 gravity_scale = 2.66454e-15
 script = ExtResource("1_vdn03")
