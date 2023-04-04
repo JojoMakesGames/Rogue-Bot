@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cm8rfl8k0xt4j"
-path.s3tc="res://.godot/imported/scorch_01.png-0d4725203d0f9c5ff7dc09e1baa98f8b.s3tc.ctex"
+path.etc2="res://.godot/imported/scorch_01.png-0d4725203d0f9c5ff7dc09e1baa98f8b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Scenes/Assets/particles/scorch_01.png"
-dest_files=["res://.godot/imported/scorch_01.png-0d4725203d0f9c5ff7dc09e1baa98f8b.s3tc.ctex"]
+dest_files=["res://.godot/imported/scorch_01.png-0d4725203d0f9c5ff7dc09e1baa98f8b.etc2.ctex"]
 
 [params]
 

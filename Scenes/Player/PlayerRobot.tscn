@@ -61,6 +61,9 @@ bone_idx = 3
 transform = Transform3D(0.998071, -0.0469698, -0.0405853, 0.0492516, 0.997148, 0.0571814, 0.0377837, -0.0590701, 0.997538, -0.0521874, 3.65313, -0.00113432)
 bone_idx = 11
 
+[node name="Head_2" parent="Robot/RobotArmature/Skeleton3D/Head_2" index="0"]
+transform = Transform3D(1, 1.61531e-09, 3.88473e-09, 2.22252e-10, 1, -1.82577e-09, 1.76627e-09, 1.16811e-09, 1, 0, 0, 0)
+
 [node name="ArmL" parent="Robot/RobotArmature/Skeleton3D" index="2"]
 transform = Transform3D(0.435433, 0.900219, 0.00201414, -0.869529, 0.421166, -0.257952, -0.233061, 0.110569, 0.966155, 0.265002, 2.88456, 0.130695)
 bone_idx = 30

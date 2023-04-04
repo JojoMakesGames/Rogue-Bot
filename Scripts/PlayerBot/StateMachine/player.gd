@@ -10,7 +10,8 @@ var direction: Vector3
 
 func _ready():
 	camera.target = self
-	change_hacked_object(hacked_object)	
+	change_hacked_object(hacked_object)
+	ChaosTracker.player_hack.emit(self, hacked_object.get_instance_id())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func _physics_process(_delta):
@@ -23,29 +24,27 @@ func _process(delta):
   
 	rotation_degrees.y -= mouse_delta.x * 10.0 * delta
 	mouse_delta = Vector2()
+	ChaosTracker.looking_direction.emit(-global_transform.basis.z)
 	var input_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
 	var forward = global_transform.basis.z
 	var right = global_transform.basis.x
 	direction = (forward * input_dir.y + right * input_dir.x).normalized()
 	direction.y = 0
-	hacked_object.input_direction = direction
+	ChaosTracker.player_direction.emit(direction)
+	
 	
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
 
 func change_hacked_object(new_hacked_object: Node3D):
-	if hacked_object != null:
-		hacked_object.hacked = false
 	hacked_object = new_hacked_object
-	hacked_object.hacked = true
 	camera.offset = hacked_object.get_node("CameraPlacement").position
 	
 func scan_for_hackables():
 	var space_state = get_world_3d().direct_space_state
-	var forward = hacked_object.global_transform.basis.z * -1000
-	var adjusted_postion = Vector3(hacked_object.global_position.x, 0, hacked_object.global_position.z)
-	var query = PhysicsRayQueryParameters3D.create(adjusted_postion, forward)
+	var forward = global_transform.basis.z * -1000
+	var query = PhysicsRayQueryParameters3D.create(position, forward)
 	query.set_collision_mask(4)
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
@@ -53,6 +52,7 @@ func scan_for_hackables():
 	if "collider" in result:
 		current_scan = result["collider"].get_parent() as Node3D
 		if Input.is_action_just_pressed("hack"):
+			ChaosTracker.player_hack.emit(self, current_scan.get_instance_id())
 			change_hacked_object(current_scan)
 	elif current_scan:
 		current_scan = null
