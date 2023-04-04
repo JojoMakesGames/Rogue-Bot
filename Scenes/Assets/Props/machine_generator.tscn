@@ -7,7 +7,10 @@
 size = Vector3(0.634443, 0.556326, 0.547923)
 
 [node name="Machine_Generator" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_m133l")
+POINTS = 10
 mesh = NodePath("machine_generator/tmpParent/machine_generator2")
 
 [node name="machine_generator" parent="." instance=ExtResource("1_71pm6")]
@@ -16,5 +19,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217213, 0)
 shape = SubResource("BoxShape3D_qt8yi")
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.434426, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_qt8yi")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="machine_generator"]

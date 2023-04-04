@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtqtqo8864alt"]
+[gd_scene load_steps=4 format=3 uid="uid://dtqtqo8864alt"]
 
 [ext_resource type="PackedScene" uid="uid://b322bu2x5bcuq" path="res://Assets/props/machine_generatorLarge.glb" id="1_fabyi"]
+[ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_n2yjw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bp24m"]
 
 [node name="Generator" type="StaticBody3D"]
-transform = Transform3D(2.17077, 0, 0, 0, 2.17077, 0, 0, 0, 2.17077, 28.1509, -1.63633, 15.1695)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_n2yjw")
+POINTS = 5
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385672, 0)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_bp24m")
 
 [node name="machine_generatorLarge" parent="." instance=ExtResource("1_fabyi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
@@ -13,5 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192836, 0)
 shape = SubResource("BoxShape3D_bp24m")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="machine_generatorLarge"]

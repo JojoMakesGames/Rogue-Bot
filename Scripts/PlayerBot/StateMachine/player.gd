@@ -12,9 +12,9 @@ var direction: Vector3
 var tween: Tween
 
 func _ready():
-	tween = get_tree().create_tween()	
+	tween = get_tree().create_tween()
 	camera.target = self
-	change_hacked_object(hacked_object)
+	change_hacked_object(hacked_object, true)
 	ChaosTracker.player_hack.emit(self, hacked_object.get_instance_id())
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
@@ -42,16 +42,17 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_delta = event.relative
 
-func change_hacked_object(new_hacked_object: Node3D):
+func change_hacked_object(new_hacked_object: Node3D, init: bool = false):
 	hacked_object = new_hacked_object
 	tween = get_tree().create_tween()
 	var position_tween = tween.tween_property(self, "position", hacked_object.position, .5)
 	position_tween.set_ease(Tween.EASE_IN_OUT)
-	audio.play()
-	var spark = sparks.instantiate()
-	add_child(spark)
-	spark.scale = Vector3(3,3,3)
-	tween.tween_callback(spark.queue_free)
+	if !init:
+		audio.play()
+		var spark = sparks.instantiate()
+		add_child(spark)
+		spark.scale = Vector3(3,3,3)
+		tween.tween_callback(spark.queue_free)
 	
 	camera.offset = hacked_object.get_node("CameraPlacement").position
 	

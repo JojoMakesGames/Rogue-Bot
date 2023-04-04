@@ -1,17 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://4s4lbqf3pfyx"]
+[gd_scene load_steps=4 format=3 uid="uid://4s4lbqf3pfyx"]
 
+[ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_fersm"]
 [ext_resource type="PackedScene" uid="uid://bra8qxeox83u4" path="res://Assets/props/satelliteDish_detailed.glb" id="1_ral0g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wya5"]
 size = Vector3(0.728269, 1.22176, 0.552219)
 
 [node name="Dish" type="StaticBody3D"]
-transform = Transform3D(2.79734, 0, 0, 0, 2.79734, 0, 0, 0, 2.79734, 31.9344, -1.63633, 14.248)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_fersm")
+POINTS = 15
 
 [node name="satelliteDish_detailed" parent="." instance=ExtResource("1_ral0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3wya5")
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_3wya5")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="satelliteDish_detailed"]
