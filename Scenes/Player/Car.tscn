@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://unkgibbg86cw"]
+[gd_scene load_steps=17 format=3 uid="uid://unkgibbg86cw"]
 
 [ext_resource type="Script" path="res://Scripts/StateMachine/player_car.gd" id="1_0lgpy"]
+[ext_resource type="Texture2D" uid="uid://dq1nllc1tw5cc" path="res://Assets/UI/Ui_carbot.png" id="2_kff5s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44whk"]
 resource_name = "carTire"
@@ -278,6 +279,7 @@ points = PackedVector3Array(0.75, 0.59999, -0.322979, 0.75, 0.499971, -0.322979,
 collision_mask = 7
 mass = 30.0
 script = ExtResource("1_0lgpy")
+texture = ExtResource("2_kff5s")
 
 [node name="wheel_FL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-0.999992, -0.00384436, 0.000883097, -0.00384196, 0.999989, 0.0027055, -0.000893496, 0.00270208, -0.999996, -0.299327, -0.113659, -0.760265)

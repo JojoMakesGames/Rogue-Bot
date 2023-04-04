@@ -16,7 +16,7 @@ var player: Node3D
 @export var JUMP_VELOCITY: float
 @export var acceleration: float
 
-@export var hacked: bool
+@export var texture: Texture2D
 
 func _ready():
 	ChaosTracker.player_hack.connect(_on_player_hack)

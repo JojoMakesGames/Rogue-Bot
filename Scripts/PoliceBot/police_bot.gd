@@ -11,6 +11,7 @@ class_name PoliceBot
 @onready var animations: AnimationPlayer = $policebot/AnimationPlayer
 @export var target: Player
 @export var laser: PackedScene
+@export var texture: Texture2D
 var input_direction: Vector3
 var movement_delta: float
 var looking_direction: Vector3

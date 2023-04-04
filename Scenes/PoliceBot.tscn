@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5470ita3oy35"]
+[gd_scene load_steps=8 format=3 uid="uid://b5470ita3oy35"]
 
 [ext_resource type="Script" path="res://Scripts/PoliceBot/police_bot.gd" id="1_q20i3"]
 [ext_resource type="PackedScene" uid="uid://6m04rkblxtb8" path="res://Scenes/Player/PoliceStateMachine.tscn" id="2_4gt1v"]
 [ext_resource type="PackedScene" uid="uid://by71sgyloj4wm" path="res://Scenes/Player/LaserShot.tscn" id="2_htpk0"]
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="3_3yllc"]
+[ext_resource type="Texture2D" uid="uid://buosafhqeieyo" path="res://Assets/UI/Ui_policebot.png" id="3_o86yw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kj47b"]
 size = Vector3(5, 8, 3)
@@ -18,6 +19,7 @@ script = ExtResource("1_q20i3")
 SPEED = 5
 SHOT_SPEED = 2000
 laser = ExtResource("2_htpk0")
+texture = ExtResource("3_o86yw")
 
 [node name="RightGun" type="Node3D" parent="."]
 transform = Transform3D(-1, -1.21652e-31, -8.74228e-08, 4.02215e-24, 1, 0, 8.74228e-08, 0, -1, 1.5251, -0.131293, -2.1106)

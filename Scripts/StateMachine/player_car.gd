@@ -3,6 +3,7 @@ extends VehicleBody3D
 var base_color: Color
 var input_direction: Vector3
 var player: Player
+@export var texture: Texture2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
