@@ -46,4 +46,4 @@ func _on_direction(direction: Vector3):
 	input_direction = direction
 	
 func _on_looking_direction(direction: Vector3):
-	print(direction)
+	pass

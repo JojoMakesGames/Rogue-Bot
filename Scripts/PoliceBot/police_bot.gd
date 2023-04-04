@@ -42,7 +42,6 @@ func _physics_process(delta):
 		
 func shoot(callback: Callable):
 	var parent = get_parent()
-	var direction = (-global_transform.basis.z).normalized()
 	var laser1: RigidBody3D = laser.instantiate()
 	laser1.position = left_gun.global_position
 	parent.add_child(laser1)

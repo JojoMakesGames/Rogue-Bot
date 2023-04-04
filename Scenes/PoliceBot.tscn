@@ -43,6 +43,18 @@ bones/13/rotation = Quaternion(-0.273049, -0.652324, -0.651187, 0.275451)
 bones/15/position = Vector3(-0.888225, 0.886611, -1.04028)
 bones/15/rotation = Quaternion(-0.484428, -0.507198, 0.492696, 0.515101)
 
+[node name="Cube001" parent="policebot/metarig/Skeleton3D" index="1"]
+transform = Transform3D(1, 4.02216e-24, 0, 4.02216e-24, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cube002" parent="policebot/metarig/Skeleton3D" index="2"]
+transform = Transform3D(1, 4.02216e-24, 0, 4.02216e-24, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cube003" parent="policebot/metarig/Skeleton3D" index="3"]
+transform = Transform3D(1, 4.02216e-24, 0, 4.02216e-24, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cube004" parent="policebot/metarig/Skeleton3D" index="4"]
+transform = Transform3D(1, 4.02216e-24, 0, 4.02216e-24, 1, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="DetectionArea" type="Area3D" parent="."]
 transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 4
