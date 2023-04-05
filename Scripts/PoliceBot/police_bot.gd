@@ -147,7 +147,6 @@ func _on_timer_timeout():
 	timer.wait_time = my_random_number
 	timer.start()
 
-
 func _on_hitbox_body_entered(body):
 	health = health - 20
 	set_health.emit(health/HEALTH)
