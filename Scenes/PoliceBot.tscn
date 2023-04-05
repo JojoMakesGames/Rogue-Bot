@@ -24,7 +24,7 @@ size = Vector3(6.47307, 4.52331, 4.64513)
 diffuse_mode = 3
 albedo_color = Color(0.498039, 0, 0, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_2q7ou"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_p1njg"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ytmol")
 top_radius = 0.1
@@ -129,7 +129,7 @@ shape = SubResource("BoxShape3D_4s0xu")
 
 [node name="HealthBar" parent="." instance=ExtResource("7_c02ey")]
 transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 2.44494e-08, 1.73331, -2.63461e-16)
-mesh = SubResource("CylinderMesh_2q7ou")
+mesh = SubResource("CylinderMesh_p1njg")
 
 [connection signal="set_health" from="." to="HealthBar" method="_on_set_health"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
