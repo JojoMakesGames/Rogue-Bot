@@ -62,7 +62,7 @@ func _on_looking_direction(direction: Vector3):
 func _on_hitbox_body_entered(body):
 	health = health - 20
 	set_health.emit(health/HEALTH)
-	if health < 0:
+	if health <= 0:
 		ChaosTracker.object_destroyed.emit(self)
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
