@@ -19,6 +19,7 @@ func destroy():
 	var explode = explosion.instantiate() as Node3D
 	add_child(explode)
 	explode.global_position = global_position
+	explode.add_to_group("enemy_bots",false)
 	tween.tween_property(explode, "scale", Vector3(5,5,5), 1)
 	tween.tween_interval(1)
 	tween.set_parallel(false)
