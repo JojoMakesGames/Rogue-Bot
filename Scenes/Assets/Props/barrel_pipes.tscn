@@ -27,8 +27,8 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.08165e-12, 2.08165e-12, 2.0
 
 [node name="Hitbox" type="Area3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
-collision_layer = 8
-collision_mask = 8
+collision_layer = 40
+collision_mask = 40
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.0425043, 0.344997, 0)
