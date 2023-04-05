@@ -1,15 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://drfe3goffiws6"]
+[gd_scene load_steps=5 format=3 uid="uid://drfe3goffiws6"]
 
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_glqxs"]
 [ext_resource type="PackedScene" uid="uid://d3qvk5fftfp21" path="res://Assets/props/barrels_rail.glb" id="1_xdx5p"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="3_bn3eg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kp4al"]
-size = Vector3(1.20101, 1.66238, 1.10571)
+size = Vector3(1.20101, 0.849677, 1.10571)
 
 [node name="Barrel_Cart" type="RigidBody3D"]
 script = ExtResource("1_glqxs")
 
 [node name="barrels_rail" parent="." instance=ExtResource("1_xdx5p")]
+transform = Transform3D(2.40322, 0, 0, 0, 2.40322, 0, 0, 0, 2.40322, -4.80281, -0.579721, -3.612)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.147107, 0)
 shape = SubResource("BoxShape3D_kp4al")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_bn3eg")]

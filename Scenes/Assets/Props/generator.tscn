@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtqtqo8864alt"]
+[gd_scene load_steps=5 format=3 uid="uid://dtqtqo8864alt"]
 
 [ext_resource type="PackedScene" uid="uid://b322bu2x5bcuq" path="res://Assets/props/machine_generatorLarge.glb" id="1_fabyi"]
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_n2yjw"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="3_o2ccm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bp24m"]
 
@@ -25,6 +26,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192836, 0)
 shape = SubResource("BoxShape3D_bp24m")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_o2ccm")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.44275e-08, 1.205, 0)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 

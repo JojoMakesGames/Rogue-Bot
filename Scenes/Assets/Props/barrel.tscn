@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi3m7ksxqcdau"]
+[gd_scene load_steps=8 format=3 uid="uid://bi3m7ksxqcdau"]
 
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_7kiax"]
 [ext_resource type="PackedScene" uid="uid://dy4y0hggnklc0" path="res://Assets/props/barrel.glb" id="1_kn2f0"]
 [ext_resource type="AudioStream" uid="uid://gxhg8mujwhdb" path="res://Assets/SFX/explosion1.wav" id="3_4v1xp"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="4_a721f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tppq3"]
 bounce = 0.2
@@ -46,6 +47,9 @@ shape = SubResource("CylinderShape3D_n43tr")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_4v1xp")
 volume_db = -5.0
+
+[node name="HealthBar" parent="." instance=ExtResource("4_a721f")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.62734e-09, 1.5723, 0)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://m0gkrm3wxqmf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytmol"]
+diffuse_mode = 3
+albedo_color = Color(0.498039, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2olbv"]
+material = SubResource("StandardMaterial3D_ytmol")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[node name="HealthBar" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.44494e-08, 0.97573, 0)
+visible = false
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_2olbv")
