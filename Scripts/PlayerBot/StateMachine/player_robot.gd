@@ -6,7 +6,6 @@ signal set_health(percentage: float)
 
 @onready var state_machine: PlayerRobotStateMachine = $StateMachine
 @onready var mesh: MeshInstance3D = $MeshInstance3D
-@onready var base_color: Color = mesh.mesh.material.albedo_color
 @onready var animations: AnimationPlayer = $Robot/AnimationPlayer
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var head: BoneAttachment3D = $Robot/RobotArmature/Skeleton3D/Head_2
@@ -19,7 +18,7 @@ var player: Node3D
 @export var HEALTH: float
 @export var acceleration: float
 
-var health: float = HEALTH
+var health: float
 
 @export var texture: Texture2D
 
@@ -29,6 +28,7 @@ func _ready():
 	ChaosTracker.player_hack.connect(_on_player_hack)
 	ChaosTracker.player_direction.connect(_on_direction)
 	ChaosTracker.looking_direction.connect(_on_looking_direction)
+	health = HEALTH
 
 func _physics_process(delta):
 	if player != null:
@@ -48,6 +48,7 @@ func _on_player_hack(player: Player, hacked_instance_id: int):
 		self.player = player
 	else:
 		self.player = null
+		animations.stop()
 
 func _on_direction(direction: Vector3):
 	input_direction = direction
@@ -57,6 +58,7 @@ func _on_looking_direction(direction: Vector3):
 
 
 func _on_hitbox_body_entered(body):
-	health -= 20
+	print(health)
+	health = health - 20
 	set_health.emit(health/HEALTH)
 	

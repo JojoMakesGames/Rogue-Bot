@@ -109,6 +109,7 @@ func _on_player_hack(player: Player, hacked_instance_id: int):
 		self.player = player
 	else:
 		self.player = null
+		animations.stop()
 
 func _on_direction(direction: Vector3):
 	input_direction = direction

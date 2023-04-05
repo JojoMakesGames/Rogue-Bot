@@ -10,6 +10,7 @@ albedo_color = Color(0.584314, 0.0784314, 0.266667, 1)
 material = SubResource("StandardMaterial3D_7cml0")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7anad"]
+radius = 0.343176
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uk346"]
 particle_flag_align_y = true
@@ -34,11 +35,11 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_vgi13")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u1soj"]
-radius = 0.704822
+radius = 0.499988
 
 [node name="LaserShot" type="RigidBody3D"]
-collision_layer = 11
-collision_mask = 11
+collision_layer = 35
+collision_mask = 35
 mass = 1.1
 gravity_scale = 2.66454e-15
 script = ExtResource("1_vdn03")
