@@ -9,37 +9,35 @@ script = ExtResource("1_5gquu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Button_Play" type="Button" parent="CanvasLayer"]
-offset_left = 61.0
-offset_top = 424.0
-offset_right = 391.0
-offset_bottom = 532.0
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_left = 133.0
+offset_top = 177.0
+offset_right = 672.0
+offset_bottom = 1100.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "ROGUEBOT"
+
+[node name="Button_Play" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
-[node name="Button_Cont" type="Button" parent="CanvasLayer"]
-offset_left = 64.0
-offset_top = 581.0
-offset_right = 394.0
-offset_bottom = 689.0
+[node name="Button_Cont" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "CONTROLS"
 
-[node name="Button_Quit" type="Button" parent="CanvasLayer"]
-offset_left = 68.0
-offset_top = 757.0
-offset_right = 398.0
-offset_bottom = 865.0
+[node name="Button_Quit" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 48.0
-offset_top = 179.0
-offset_right = 913.0
-offset_bottom = 333.0
-theme_override_font_sizes/normal_font_size = 80
-text = "ROGUEBOT"
 
 [node name="Panel" parent="CanvasLayer" instance=ExtResource("1_likoq")]
 visible = false
@@ -52,6 +50,6 @@ offset_bottom = 438.734
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[connection signal="pressed" from="CanvasLayer/Button_Play" to="." method="_on_button_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button_Cont" to="." method="_on_button_cont_pressed"]
-[connection signal="pressed" from="CanvasLayer/Button_Quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Button_Cont" to="." method="_on_button_cont_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/Button_Quit" to="." method="_on_button_quit_pressed"]

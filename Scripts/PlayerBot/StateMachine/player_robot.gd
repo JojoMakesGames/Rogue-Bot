@@ -9,6 +9,8 @@ signal set_health(percentage: float)
 @onready var animations: AnimationPlayer = $Robot/AnimationPlayer
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var head: BoneAttachment3D = $Robot/RobotArmature/Skeleton3D/Head_2
+@onready var explosion = load("res://Scenes/Assets/particles/parts_explode.tscn")
+@onready var you_lose = load("res://Scenes/Assets/UI/You Lose.tscn")
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") 
 var input_direction: Vector3
 var player: Node3D
@@ -61,4 +63,19 @@ func _on_hitbox_body_entered(body):
 	print(health)
 	health = health - 20
 	set_health.emit(health/HEALTH)
-	
+	if health < 0:
+		var tween = get_tree().create_tween()
+		tween.set_parallel(true)
+		var explode = explosion.instantiate() as Node3D
+		add_child(explode)
+		explode.global_position = global_position
+		tween.tween_property(explode, "scale", Vector3(5,5,5), 1)
+		tween.tween_interval(1)
+		tween.set_parallel(false)
+		if player:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			visible = false
+			var lose = you_lose.instantiate()
+			add_child(lose)
+		else:
+			tween.tween_callback(queue_free)

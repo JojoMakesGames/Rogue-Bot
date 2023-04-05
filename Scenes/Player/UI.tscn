@@ -44,6 +44,6 @@ offset_left = 1068.0
 offset_top = 3.0
 offset_right = 1313.0
 offset_bottom = 143.0
-text = "Test
+text = "0
 "
 label_settings = SubResource("LabelSettings_0r3gm")

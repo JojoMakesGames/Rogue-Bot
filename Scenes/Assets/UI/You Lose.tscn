@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu0qw0m0m20jo"]
+
+[ext_resource type="Script" path="res://Scenes/Assets/UI/Lose.gd" id="1_2g5hh"]
+
+[node name="You Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2g5hh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 2310.0
+offset_bottom = 1311.0
+
+[node name="Panel" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "You've been destroyed!"
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer/Panel"]
+layout_mode = 2
+mouse_default_cursor_shape = 3
+theme_override_font_sizes/font_size = 50
+action_mode = 0
+text = "Return to Title"
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Panel/Button" to="." method="_on_button_pressed"]

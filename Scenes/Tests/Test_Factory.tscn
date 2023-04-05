@@ -276,9 +276,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9012, -1.11636, -4.12166)
 [node name="Barrel3" parent="Props" instance=ExtResource("33_ib68x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1802, -1.63633, -3.53593)
 
-[node name="Machine_Generator3" parent="Props" node_paths=PackedStringArray("mesh") instance=ExtResource("34_hs37x")]
+[node name="Machine_Generator3" parent="Props" instance=ExtResource("34_hs37x")]
 transform = Transform3D(1.66905, 0, 0, 0, 1.66905, 0, 0, 0, 1.66905, -11.3882, -1.648, 57.2416)
-mesh = NodePath("../Machine_Generator2/machine_generator/tmpParent/machine_generator2")
 
 [node name="Barrel9" parent="Props" instance=ExtResource("33_ib68x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6216, -1.64377, 17.2631)
