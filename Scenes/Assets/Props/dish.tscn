@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_fersm"]
 [ext_resource type="PackedScene" uid="uid://bra8qxeox83u4" path="res://Assets/props/satelliteDish_detailed.glb" id="1_ral0g"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="3_cq1sq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bnvid"]
 
@@ -21,6 +22,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_3wya5")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_cq1sq")]
+transform = Transform3D(-3.31436e-08, -0.758237, 0, 0.758237, -3.31436e-08, 0, 0, 0, 0.758237, 2.901e-08, 0.871396, 0)
 
 [node name="Hitbox" type="Area3D" parent="."]
 collision_layer = 8

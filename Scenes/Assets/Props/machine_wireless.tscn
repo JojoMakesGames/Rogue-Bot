@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0oy68ot16oar"]
+[gd_scene load_steps=4 format=3 uid="uid://0oy68ot16oar"]
 
 [ext_resource type="PackedScene" uid="uid://c7cp5dq2i60r2" path="res://Assets/props/machine_wirelessCable.glb" id="1_spd0m"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="2_fjr2i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4vb5o"]
 size = Vector3(0.81192, 1.07132, 0.547561)
@@ -14,5 +15,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.5)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0598316, 0.265595, 0)
 shape = SubResource("BoxShape3D_4vb5o")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_fjr2i")]
+transform = Transform3D(-2.75894e-08, -0.631173, 0, 0.631173, -2.75894e-08, 0, 0, 0, 0.631173, 0, 0.97573, 0)
 
 [editable path="machine_wirelessCable"]

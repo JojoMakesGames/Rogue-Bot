@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn2rq3ivx3mpk"]
+[gd_scene load_steps=5 format=3 uid="uid://bn2rq3ivx3mpk"]
 
 [ext_resource type="PackedScene" uid="uid://dh3xn8utdl8or" path="res://Assets/props/machine_generator.glb" id="1_71pm6"]
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_m133l"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="3_7eeja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qt8yi"]
 size = Vector3(0.634443, 0.556326, 0.547923)
@@ -27,6 +28,9 @@ collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_qt8yi")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_7eeja")]
+transform = Transform3D(-3.83702e-08, -0.877807, 0, 0.877807, -3.83702e-08, 0, 0, 0, 0.877807, 2.44494e-08, 0.97573, 0)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 

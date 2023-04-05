@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://by71sgyloj4wm" path="res://Scenes/Player/LaserShot.tscn" id="2_htpk0"]
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="3_3yllc"]
 [ext_resource type="Texture2D" uid="uid://buosafhqeieyo" path="res://Assets/UI/Ui_policebot.png" id="3_o86yw"]
+[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="6_rhwm1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kj47b"]
 size = Vector3(5, 8, 3)
@@ -88,6 +89,9 @@ avoidance_enabled = true
 radius = 5.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 1, 0, 1)
+
+[node name="HealthBar" parent="." instance=ExtResource("6_rhwm1")]
+transform = Transform3D(-7.77319e-08, -1.7783, 0, 1.7783, -7.77319e-08, 0, 0, 5.29396e-23, 1.7783, -3.02526e-08, 2.22716, 0)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
