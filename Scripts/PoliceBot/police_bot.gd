@@ -117,7 +117,7 @@ func ai_shoot():
 func _on_player_hack(player: Player, hacked_instance_id: int):
 	if hacked_instance_id == get_instance_id():
 		self.player = player
-		health = 50
+		health = 500
 	else:
 		self.player = null
 		animations.stop()
@@ -133,7 +133,6 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	animations.play("Walk")
 	look_at(nav.get_final_position())
 	rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
-		
 	
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 

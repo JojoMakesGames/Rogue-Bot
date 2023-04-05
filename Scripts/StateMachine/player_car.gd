@@ -5,6 +5,7 @@ var input_direction: Vector3
 var player: Player
 @export var texture: Texture2D
 @export var HEALTH: float = 500
+@export var POINTS: float = 500
 var can_hack: bool = true
 var health: float
 
@@ -44,6 +45,7 @@ func _on_hitbox_body_entered(body):
 	health = health - 20
 	set_health.emit(health/HEALTH)
 	if health < 0:
+		ChaosTracker.object_destroyed.emit(self)
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
 		var explode = explosion.instantiate() as Node3D

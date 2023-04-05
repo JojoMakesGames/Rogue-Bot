@@ -16,6 +16,7 @@ var player: Node3D
 var can_hack: bool = true
 
 @export var SPEED: float
+@export var POINTS: int = 100
 @export var JUMP_VELOCITY: float
 @export var HEALTH: float
 @export var acceleration: float
@@ -63,6 +64,7 @@ func _on_hitbox_body_entered(body):
 	health = health - 20
 	set_health.emit(health/HEALTH)
 	if health < 0:
+		ChaosTracker.object_destroyed.emit(self)
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
 		var explode = explosion.instantiate() as Node3D
