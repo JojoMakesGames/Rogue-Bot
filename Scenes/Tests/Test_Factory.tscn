@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://ivjodn1ifqx3"]
+[gd_scene load_steps=64 format=3 uid="uid://ivjodn1ifqx3"]
 
 [ext_resource type="PackedScene" uid="uid://dad8wbpsthf6h" path="res://Assets/city/large_buildingA.glb" id="2_lqp4o"]
 [ext_resource type="PackedScene" uid="uid://cve2pdib4k403" path="res://Assets/city/large_buildingB.glb" id="3_prkpw"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://brpff1au3kxym" path="res://Assets/city/large_buildingD.glb" id="7_m5eah"]
 [ext_resource type="PackedScene" uid="uid://nn6xy01rn0fd" path="res://Assets/city/large_buildingE.glb" id="8_i2a7n"]
 [ext_resource type="PackedScene" uid="uid://c1ncexn2ng6w6" path="res://Assets/city/large_buildingG.glb" id="9_4mf0t"]
-[ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="10_lcvpr"]
-[ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="12_e85xm"]
 [ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="13_qafv8"]
 [ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="13_y1dmq"]
 [ext_resource type="PackedScene" uid="uid://b5b3poms6pdnc" path="res://Assets/city/roads/road_straight.glb" id="14_ob3e7"]
@@ -35,6 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://bn2rq3ivx3mpk" path="res://Scenes/Assets/Props/machine_generator.tscn" id="34_hs37x"]
 [ext_resource type="PackedScene" uid="uid://b46gbppqgrkag" path="res://Scenes/Assets/Factory/small_building_d.tscn" id="35_8xyh3"]
 [ext_resource type="PackedScene" uid="uid://dn7aamawfjg0g" path="res://Scenes/Assets/Factory/small_building_e.tscn" id="36_co6vi"]
+[ext_resource type="AudioStream" uid="uid://wwrimwyshisq" path="res://Assets/SFX/Palaces.wav" id="36_g8cmh"]
+[ext_resource type="PackedScene" uid="uid://co7446jwa8k46" path="res://Scenes/Teleporter.tscn" id="36_p34df"]
+[ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="37_17m3r"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u1id3"]
 
@@ -133,6 +134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117409, -0.0817375, -0.065
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.998659, -0.0319103, 0.0407655, -0.0430196, -0.0734683, 0.996369, -0.0287994, -0.996787, -0.0747426, 10.3053, 54.8425, -0.0735407)
+shadow_enabled = true
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(6.54171, 0, 0, 0, 6.54171, 0, 0, 0, 6.54171, -0.256946, -1.63633, 1.97084)
@@ -144,82 +146,6 @@ shape = SubResource("WorldBoundaryShape3D_u1id3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.75157)
 material_override = SubResource("StandardMaterial3D_4k5u8")
 mesh = SubResource("PlaneMesh_0xwnq")
-
-[node name="Robot" parent="." instance=ExtResource("10_lcvpr")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.324801, -1.44023, 1.70537)
-
-[node name="Skeleton3D" parent="Robot/RobotArmature" index="0"]
-bones/8/rotation = Quaternion(0.00102117, -0.00441053, 0.00436832, 0.99998)
-bones/11/rotation = Quaternion(-0.0545858, -0.689886, 0.0692138, 0.718531)
-bones/12/rotation = Quaternion(0.309992, 0.499338, -0.36494, 0.72207)
-bones/27/rotation = Quaternion(0.0435723, 0.80457, 0.0574779, 0.589461)
-bones/28/rotation = Quaternion(0.0897255, -0.705058, 0.255014, 0.6556)
-bones/42/rotation = Quaternion(0.985518, 0.0175896, -0.0842843, 0.146085)
-bones/42/scale = Vector3(1, 1, 1.00002)
-bones/43/rotation = Quaternion(0.277154, 1.27869e-07, -7.01762e-08, 0.960825)
-bones/46/rotation = Quaternion(0.979527, -0.0257523, 0.13731, 0.144948)
-bones/46/scale = Vector3(1, 1, 1.00002)
-bones/47/rotation = Quaternion(0.277154, -3.12318e-07, 4.08035e-08, 0.960825)
-
-[node name="FootL_2" parent="Robot/RobotArmature/Skeleton3D" index="0"]
-transform = Transform3D(-1, 3.67965e-07, -4.36403e-06, -4.37366e-06, -0.0324215, 0.999474, 2.26284e-07, 0.999474, 0.0324214, 0.633527, 0.0141392, 0.187344)
-bone_name = "Foot.L_end"
-bone_idx = 2
-
-[node name="Head_2" parent="Robot/RobotArmature/Skeleton3D" index="1"]
-transform = Transform3D(0.999873, -0.00544278, -0.014966, 0.00470002, 0.998776, -0.0492249, 0.0152156, 0.0491482, 0.998675, -0.00270992, 3.00414, 0.0164838)
-bone_name = "Head"
-bone_idx = 9
-
-[node name="ArmL" parent="Robot/RobotArmature/Skeleton3D" index="2"]
-transform = Transform3D(0.0121274, -0.912226, -0.40951, 0.213251, 0.402477, -0.890245, 0.976923, -0.0765319, 0.199414, 2.64001, 2.17321, 0.275879)
-bone_name = "Index2.L"
-bone_idx = 24
-
-[node name="ShoulderL_2" parent="Robot/RobotArmature/Skeleton3D" index="3"]
-transform = Transform3D(0.0121243, -0.912225, -0.409511, 0.213245, 0.402479, -0.890246, 0.976924, -0.0765327, 0.199407, 2.52007, 2.22612, 0.265817)
-bone_name = "Index2.L_end"
-bone_idx = 25
-
-[node name="ArmR" parent="Robot/RobotArmature/Skeleton3D" index="4"]
-transform = Transform3D(-0.202694, 0.92426, 0.323509, -0.979219, -0.189086, -0.0733152, -0.00659144, -0.331647, 0.94338, -1.0604, 1.01984, 1.10437)
-bone_name = "Thumb2.R"
-bone_idx = 40
-
-[node name="ShoulderR_2" parent="Robot/RobotArmature/Skeleton3D" index="5"]
-transform = Transform3D(-0.202692, 0.92426, 0.32351, -0.979219, -0.189085, -0.0733129, -0.00658942, -0.331649, 0.94338, -0.943219, 0.995871, 1.06232)
-bone_name = "Thumb2.R_end"
-bone_idx = 41
-
-[node name="LowerLegL_2" parent="Robot/RobotArmature/Skeleton3D" index="6"]
-transform = Transform3D(-0.180874, 0.97345, 0.140291, 0.538193, 0.217353, -0.814318, -0.82319, -0.07179, -0.563237, -1.15346, 1.27357, 0.61692)
-bone_name = "Index2.R"
-bone_idx = 44
-
-[node name="LegL" parent="Robot/RobotArmature/Skeleton3D" index="7"]
-transform = Transform3D(-0.180874, 0.973449, 0.140291, 0.538193, 0.217354, -0.814318, -0.82319, -0.0717906, -0.563237, -1.02547, 1.30214, 0.607481)
-bone_name = "Index2.R_end"
-bone_idx = 45
-
-[node name="LowerLegR_2" parent="Robot/RobotArmature/Skeleton3D" index="8"]
-transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.16446, -0.763648, -0.625065, -0.691515, -0.362126, -1.10925, 1.26553, 0.620001)
-bone_name = "Ring2.R"
-bone_idx = 48
-
-[node name="LegR" parent="Robot/RobotArmature/Skeleton3D" index="9"]
-transform = Transform3D(-0.468513, 0.7034, -0.534532, 0.624338, -0.16446, -0.763648, -0.625065, -0.691515, -0.362126, -1.01677, 1.24391, 0.529084)
-bone_name = "Ring2.R_end"
-bone_idx = 49
-
-[node name="Torso_2" parent="Robot/RobotArmature/Skeleton3D" index="10"]
-transform = Transform3D(0.101816, -0.202931, -3.42424e-11, 0.202145, 0.101422, 0.0199569, -0.0178376, -0.0089496, 0.226162, -0.82569, 2.01812, 0.0402436)
-bone_name = "Arm.R"
-bone_idx = 50
-
-[node name="FootR_2" parent="Robot/RobotArmature/Skeleton3D" index="11"]
-transform = Transform3D(0.985173, -0.0355584, -0.167839, 0.0100431, -0.96466, 0.263316, -0.171267, -0.261108, -0.950009, 0.666526, 0.919759, 0.104231)
-bone_name = "LowerLeg.L"
-bone_idx = 53
 
 [node name="building8" type="StaticBody3D" parent="."]
 transform = Transform3D(11.6653, 0, 0, 0, 11.6653, 0, 0, 0, 11.6653, -19.273, -2.6049, -2.67311)
@@ -371,9 +297,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.213019)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.652148, 0)
 shape = SubResource("BoxShape3D_bj1d4")
 
-[node name="policebot" parent="." instance=ExtResource("12_e85xm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60697, 1.63396, 0.571829)
-
 [node name="PlayerRobot" parent="." instance=ExtResource("13_qafv8")]
 
 [node name="Player" parent="." node_paths=PackedStringArray("hacked_object") instance=ExtResource("13_y1dmq")]
@@ -475,6 +398,9 @@ shape = SubResource("BoxShape3D_bje24")
 [node name="large_buildingF" parent="." instance=ExtResource("22_e10if")]
 transform = Transform3D(-11.6653, 0, -1.01981e-06, 0, 11.6653, 0, 1.01981e-06, 0, -11.6653, -34.8826, -1.91826, 99.0651)
 
+[node name="large_buildingF2" parent="large_buildingF/tmpParent" index="0"]
+transform = Transform3D(1.09244, 0, 0, 0, 1, 0, 1.42109e-14, 0, 1, 0.0670929, 0, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="large_buildingF/tmpParent/large_buildingF2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="large_buildingF/tmpParent/large_buildingF2/StaticBody3D"]
@@ -483,6 +409,9 @@ shape = SubResource("BoxShape3D_wjgl6")
 
 [node name="small_buildingF" parent="." instance=ExtResource("23_8gq01")]
 transform = Transform3D(-11.6653, 0, -1.01981e-06, 0, 11.6653, 0, 1.01981e-06, 0, -11.6653, -16.8826, -1.91826, 100.065)
+
+[node name="small_buildingF2" parent="small_buildingF/tmpParent" index="0"]
+transform = Transform3D(1.16252, 0, 0, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="small_buildingF/tmpParent/small_buildingF2" index="0"]
 
@@ -543,6 +472,9 @@ shape = SubResource("BoxShape3D_7t43y")
 
 [node name="large_buildingF2" parent="." instance=ExtResource("22_e10if")]
 transform = Transform3D(-11.6653, 0, -1.01981e-06, 0, 11.6653, 0, 1.01981e-06, 0, -11.6653, 16.1174, -1.91826, 100.065)
+
+[node name="large_buildingF2" parent="large_buildingF2/tmpParent" index="0"]
+transform = Transform3D(1.04906, 0, 0, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="large_buildingF2/tmpParent/large_buildingF2" index="0"]
 
@@ -608,21 +540,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.627476, 0)
 shape = SubResource("BoxShape3D_pc4dn")
 
 [node name="Barrel_Pipes" parent="." instance=ExtResource("28_vfg0a")]
+transform = Transform3D(-0.996033, 0, 0.0889812, 0, 1, 0, -0.0889812, 0, -0.996033, -47.7074, -1.67685, 10.0567)
+
+[node name="Barrel_Pipes2" parent="." instance=ExtResource("28_vfg0a")]
+transform = Transform3D(-0.996599, 0, -0.0824081, 0, 1, 0, 0.0824081, 0, -0.996599, -47.6254, -1.67685, 6.7908)
 
 [node name="Barrel_Cart" parent="." instance=ExtResource("29_c2b0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1969, -1.20205, 6.89462)
+
+[node name="Barrel_Cart2" parent="." instance=ExtResource("29_c2b0s")]
+transform = Transform3D(0.918922, 0, -0.394439, 0, 1, 0, 0.394439, 0, 0.918922, 22.7353, -1.20205, 8.90033)
+
+[node name="Barrel_Cart3" parent="." instance=ExtResource("29_c2b0s")]
+transform = Transform3D(0.966138, 0, 0.258027, 0, 1, 0, -0.258027, 0, 0.966138, 33.5308, -1.20205, 7.7)
 
 [node name="Generator" parent="." instance=ExtResource("30_ex2mc")]
+transform = Transform3D(0.0301897, 0, 0.999544, 0, 1, 0, -0.999544, 0, 0.0301897, -22.5163, -1.80008, -12.3767)
 
 [node name="Dish" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(2.83311, 0, -2.82373, 0, 4, 0, 2.82373, 0, 2.83311, -13.6529, 3.15371, -17.1814)
 
-[node name="Machine_Wireless" parent="." instance=ExtResource("32_62a33")]
+[node name="Dish3" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(1.80893, 0, 3.5676, 3.5676, -1.74846e-07, -1.80893, 1.55945e-07, 4, -7.90708e-08, 14.381, 9.57116, 36.5819)
+
+[node name="Dish6" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(1.96543e-08, -4, 2.46487e-07, -3.0443, -1.74846e-07, -2.59466, 2.59466, -1.74846e-07, -3.0443, -24.4093, 14.2813, 32.3715)
+
+[node name="Dish4" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(-0.759123, 0, 3.92731, 3.92731, -1.74846e-07, 0.759123, 1.71668e-07, 4, 3.31826e-08, 15.4627, 48.577, 70.8016)
+
+[node name="Dish2" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(3.48968, 0, 1.95503, 0, 4, 0, -1.95503, 0, 3.48968, -22.8194, 3.15371, -17.2621)
+
+[node name="Dish5" parent="." instance=ExtResource("31_8x3t1")]
+transform = Transform3D(2.21077, 0, -3.33354, -3.33354, -1.74846e-07, -2.21077, -1.45714e-07, 4, -9.6636e-08, 36.2437, 14.7372, -9.23392)
 
 [node name="Barrel" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 21.8184, -1.6474, 4.63794)
 
 [node name="Machine_Generator" parent="." instance=ExtResource("34_hs37x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9635, -1.62967, -19.2703)
 
 [node name="small_buildingD" parent="." instance=ExtResource("35_8xyh3")]
 transform = Transform3D(-5.09906e-07, 0, 11.6653, 0, 11.6653, 0, -11.6653, 0, -5.09906e-07, -53.1297, -1.78726, 78.1591)
+
+[node name="small_buildingD2" parent="small_buildingD/tmpParent" index="0"]
+transform = Transform3D(1.08812, 0, 7.10543e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="small_buildingD/tmpParent/small_buildingD2" index="0"]
 
@@ -633,6 +596,9 @@ shape = SubResource("BoxShape3D_etkk7")
 [node name="small_buildingD2" parent="." instance=ExtResource("35_8xyh3")]
 transform = Transform3D(-5.09906e-07, 0, 11.6653, 0, 11.6653, 0, -11.6653, 0, -5.09906e-07, -53.1297, -1.78726, 89.1591)
 
+[node name="small_buildingD2" parent="small_buildingD2/tmpParent" index="0"]
+transform = Transform3D(1.13159, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0.0264301, 0, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="small_buildingD2/tmpParent/small_buildingD2" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="small_buildingD2/tmpParent/small_buildingD2/StaticBody3D"]
@@ -640,7 +606,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.542062, 0)
 shape = SubResource("BoxShape3D_etkk7")
 
 [node name="small_buildingE" parent="." instance=ExtResource("36_co6vi")]
-transform = Transform3D(-8.24861, 0, -8.24861, 0, 11.6653, 0, 8.24861, 0, -8.24861, 47.0103, -1.63633, 92.7238)
+transform = Transform3D(-9.91297, 0, -7.17594, 0, 11.6653, 0, 7.73456, 0, -9.19701, 46.5026, -1.63633, 93.028)
+
+[node name="small_buildingE2" parent="small_buildingE/tmpParent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="small_buildingE/tmpParent/small_buildingE2" index="0"]
 
@@ -658,7 +627,126 @@ shape = SubResource("ConcavePolygonShape3D_rfbsd")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_80rv7")
 
-[editable path="Robot"]
+[node name="Props" type="Node3D" parent="."]
+
+[node name="Machine_Wireless2" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-0.00619972, 0, -1.80314, 0, 1.80315, 0, 1.80314, 0, -0.00619972, 21.5983, -1.63633, 18.6815)
+
+[node name="Machine_Wireless3" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-1.79894, 0, -0.123113, 0, 1.80315, 0, 0.123113, 0, -1.79894, -17.2806, -1.63633, 35.2831)
+
+[node name="Machine_Generator2" parent="Props" instance=ExtResource("34_hs37x")]
+transform = Transform3D(1.53654, 0, 0, 0, 1.53654, 0, 0, 0, 1.53654, 34.8641, -1.63633, -19.1648)
+
+[node name="Machine_Wireless4" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-0.0469492, 0, -1.80254, 0, 1.80315, 0, 1.80254, 0, -0.0469492, -48.0746, -1.63633, -26.1807)
+
+[node name="Barrel_Pipes2" parent="Props" instance=ExtResource("28_vfg0a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.071, -1.636, 7)
+
+[node name="Barrel_Pipes3" parent="Props" instance=ExtResource("28_vfg0a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.4705, -1.636, 7)
+
+[node name="Barrel_Pipes4" parent="Props" instance=ExtResource("28_vfg0a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.002, -1.636, 7)
+
+[node name="Barrel_Cart2" parent="Props" instance=ExtResource("29_c2b0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.8909, -1.19892, 62.4218)
+
+[node name="Barrel_Cart4" parent="Props" instance=ExtResource("29_c2b0s")]
+transform = Transform3D(0.981757, 0, 0.190141, 0, 1, 0, -0.190141, 0, 0.981757, 2.32888, -1.19892, -39.4941)
+
+[node name="Barrel_Cart3" parent="Props" instance=ExtResource("29_c2b0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2017, -1.19892, 70.497)
+
+[node name="Generator2" parent="Props" instance=ExtResource("30_ex2mc")]
+transform = Transform3D(1.64678, 0, 0, 0, 1.64678, 0, 0, 0, 1.64678, 28.0171, -1.63633, 68.1365)
+
+[node name="Generator3" parent="Props" instance=ExtResource("30_ex2mc")]
+transform = Transform3D(1.64678, 0, 0, 0, 1.64678, 0, 0, 0, 1.64678, 28.0171, -1.63633, 60.5564)
+
+[node name="Barrel4" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.2081, -1.31499, 93.9822)
+
+[node name="Barrel5" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8342, -1.63633, 94.1413)
+
+[node name="Barrel6" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5683, -1.63633, 73.3567)
+
+[node name="Machine_Wireless" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-7.88182e-08, -1.80315, 0, 1.80315, -7.88182e-08, 0, 0, 0, 1.80315, -27.2405, 5.93259, 2.02072)
+
+[node name="Machine_Wireless5" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-7.88182e-08, -1.80315, 0, 1.80315, -7.88182e-08, 0, 0, 0, 1.80315, 10.9896, 5.93259, 1.74288)
+
+[node name="Machine_Wireless6" parent="Props" instance=ExtResource("32_62a33")]
+transform = Transform3D(-7.88182e-08, -1.80315, 0, 1.80315, -7.88182e-08, 0, 0, 0, 1.80315, 10.9896, 5.93259, 15.9524)
+
+[node name="Generator4" parent="Props" instance=ExtResource("30_ex2mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.588, -1.01959, 19.7698)
+
+[node name="Generator5" parent="Props" instance=ExtResource("30_ex2mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.588, -0.941882, 28.9506)
+
+[node name="Barrel8" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3734, -1.64377, 19.1583)
+
+[node name="Barrel2" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9012, -1.11636, -4.12166)
+
+[node name="Barrel3" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1802, -1.63633, -3.53593)
+
+[node name="Machine_Generator3" parent="Props" node_paths=PackedStringArray("mesh") instance=ExtResource("34_hs37x")]
+transform = Transform3D(1.66905, 0, 0, 0, 1.66905, 0, 0, 0, 1.66905, -11.3882, -1.648, 57.2416)
+mesh = NodePath("../Machine_Generator2/machine_generator/tmpParent/machine_generator2")
+
+[node name="Barrel9" parent="Props" instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6216, -1.64377, 17.2631)
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("36_g8cmh")
+volume_db = -10.0
+pitch_scale = 1.5
+autoplay = true
+
+[node name="Car" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(0.694432, 0, -0.719558, 0, 1, 0, 0.719558, 0, 0.694432, -43.6066, -1.63633, 49.8574)
+
+[node name="Car2" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(-0.771935, 0, 0.635701, 0, 1, 0, -0.635701, 0, -0.771935, 45.2862, -1.63633, -28.8316)
+
+[node name="Car9" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(-0.066657, 0, 0.997776, 0, 1, 0, -0.997776, 0, -0.066657, -18.7557, -1.63633, -14.9506)
+
+[node name="Car3" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46652, -1.63633, 68.7594)
+
+[node name="Car4" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(-0.996899, 0, 0.0786853, 0, 1, 0, -0.0786853, 0, -0.996899, 45.4232, -1.63633, 70.7397)
+
+[node name="Car8" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(-0.995128, 0, -0.0985903, 0, 1, 0, 0.0985903, 0, -0.995128, 45.7733, -1.63633, 58.0406)
+
+[node name="Car5" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(0.370314, 0, -0.928907, 0, 1, 0, 0.928907, 0, 0.370314, -42.0498, -1.63633, 82.2317)
+
+[node name="Car7" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(0.991696, 0, 0.128605, 0, 1, 0, -0.128605, 0, 0.991696, -42.2958, -1.63633, 88.4019)
+
+[node name="Car6" parent="." instance=ExtResource("37_17m3r")]
+transform = Transform3D(0.889966, 0, -0.456026, 0, 1, 0, 0.456026, 0, 0.889966, -45.6483, -1.63633, 48.8284)
+
+[node name="Teleporter" parent="." instance=ExtResource("36_p34df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8261, -2.06035, -14.2784)
+
+[node name="Teleporter2" parent="." instance=ExtResource("36_p34df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.9026, -2.06035, 56.8797)
+
+[node name="Teleporter3" parent="." instance=ExtResource("36_p34df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3829, -2.06035, 82.1361)
+
 [editable path="building8/large_buildingG"]
 [editable path="road_crossroad"]
 [editable path="large_buildingD"]

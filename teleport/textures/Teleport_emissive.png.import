@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwl5565oyxdpy"
-path.etc2="res://.godot/imported/Teleport_emissive.png-fd1c709963d3fa01f02dc4a81a2d6593.etc2.ctex"
+path.s3tc="res://.godot/imported/Teleport_emissive.png-fd1c709963d3fa01f02dc4a81a2d6593.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://teleport/textures/Teleport_emissive.png"
-dest_files=["res://.godot/imported/Teleport_emissive.png-fd1c709963d3fa01f02dc4a81a2d6593.etc2.ctex"]
+dest_files=["res://.godot/imported/Teleport_emissive.png-fd1c709963d3fa01f02dc4a81a2d6593.s3tc.ctex"]
 
 [params]
 
