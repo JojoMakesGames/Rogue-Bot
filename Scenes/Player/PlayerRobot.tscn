@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwjd6mwvvsa62"]
+[gd_scene load_steps=10 format=3 uid="uid://cwjd6mwvvsa62"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot.gd" id="1_ewkii"]
 [ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="3_lofgt"]
+[ext_resource type="PackedScene" uid="uid://dy7s7ekdxg2eb" path="res://Scenes/Assets/health_bar.tscn" id="4_dpvf8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f4m3j"]
 radius = 0.341076
@@ -17,11 +18,16 @@ material = SubResource("StandardMaterial3D_k0myy")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oub35"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vssmp"]
+radius = 0.32184
+height = 1.08968
+
 [node name="PlayerRobot" type="CharacterBody3D"]
 collision_mask = 15
 script = ExtResource("1_ewkii")
 SPEED = 5.0
 JUMP_VELOCITY = 4.0
+HEALTH = 120.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508653, 0)
@@ -111,5 +117,19 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("SphereShape3D_oub35")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_dpvf8")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.00319228, 1.69674, 0.000633001)
+parent = NodePath("..")
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426949, 0)
+shape = SubResource("CapsuleShape3D_vssmp")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="Robot"]

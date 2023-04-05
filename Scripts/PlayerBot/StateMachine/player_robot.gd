@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name PlayerRobot
 
+signal set_health(percentage: float)
+
 @onready var state_machine: PlayerRobotStateMachine = $StateMachine
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var base_color: Color = mesh.mesh.material.albedo_color
@@ -14,9 +16,14 @@ var player: Node3D
 
 @export var SPEED: float
 @export var JUMP_VELOCITY: float
+@export var HEALTH: float
 @export var acceleration: float
 
+var health: float = HEALTH
+
 @export var texture: Texture2D
+
+var health_percentage = 1
 
 func _ready():
 	ChaosTracker.player_hack.connect(_on_player_hack)
@@ -47,3 +54,9 @@ func _on_direction(direction: Vector3):
 	
 func _on_looking_direction(direction: Vector3):
 	pass
+
+
+func _on_hitbox_body_entered(body):
+	health -= 20
+	set_health.emit(health/HEALTH)
+	

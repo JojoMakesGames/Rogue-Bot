@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://unkgibbg86cw"]
+[gd_scene load_steps=17 format=3 uid="uid://unkgibbg86cw"]
 
 [ext_resource type="Script" path="res://Scripts/StateMachine/player_car.gd" id="1_0lgpy"]
 [ext_resource type="Texture2D" uid="uid://dq1nllc1tw5cc" path="res://Assets/UI/Ui_carbot.png" id="2_kff5s"]
-[ext_resource type="PackedScene" uid="uid://m0gkrm3wxqmf" path="res://Scenes/Assets/health_bar.tscn" id="3_6106b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44whk"]
 resource_name = "carTire"
@@ -359,6 +358,3 @@ shape = SubResource("SphereShape3D_p0om7")
 
 [node name="CameraPlacement" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2819, 6.74624)
-
-[node name="HealthBar" parent="." instance=ExtResource("3_6106b")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.44494e-08, 1.60855, 0)

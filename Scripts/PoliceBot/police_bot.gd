@@ -3,23 +3,28 @@ extends CharacterBody3D
 class_name PoliceBot
 
 @export var SPEED = 2
+@export var HEALTH: float = 500
 @export var SHOT_SPEED = 500
+@export var target: Node3D
+@export var laser: PackedScene
+@export var texture: Texture2D
+
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var state_machine: PoliceStateMachine = $PoliceStateMachine
 @onready var left_gun: Node3D = $LeftGun
 @onready var right_gun: Node3D = $RightGun
 @onready var animations: AnimationPlayer = $policebot/AnimationPlayer
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
-@export var target: Node3D
-@export var laser: PackedScene
-@export var texture: Texture2D
 @onready var timer: Timer = $Timer
 @onready var shooting_range: Area3D = $ShootingRange
+@onready var shooting: AudioStreamPlayer3D = $Shooting
+
 var rng = RandomNumberGenerator.new()
 var input_direction: Vector3
 var movement_delta: float
 var looking_direction: Vector3
 var player: Player
+var health: float
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -60,11 +65,15 @@ func shoot(callback: Callable):
 	var laser1: RigidBody3D = laser.instantiate()
 	laser1.position = left_gun.global_position
 	parent.add_child(laser1)
+	laser1.parent = get_node("CollisionShape3D")
+	shooting.play()	
 	laser1.apply_force(looking_direction * SHOT_SPEED)
 	
 	await get_tree().create_timer(.2).timeout
 	var laser2: RigidBody3D = laser.instantiate()
+	laser2.parent = get_node("CollisionShape3D")
 	laser2.position = right_gun.global_position
+	shooting.play()	
 	parent.add_child(laser2)
 	laser2.apply_force(looking_direction * SHOT_SPEED)
 	
@@ -77,22 +86,26 @@ func ai_shoot():
 	timer.start()
 	var parent = get_parent()
 	var laser1: RigidBody3D = laser.instantiate()
-	laser1.position = left_gun.global_position
+	laser1.parent = get_node("CollisionShape3D")
 	parent.add_child(laser1)
+	shooting.play()
+	laser1.position = left_gun.global_position
 	laser1.apply_force((target.global_position - left_gun.global_position).normalized() * SHOT_SPEED)
 	
 	animations.play("Shoot2")
 	await get_tree().create_timer(.2).timeout
 	var laser2: RigidBody3D = laser.instantiate()
-	laser2.position = right_gun.global_position
+	laser2.parent = get_node("CollisionShape3D")
 	parent.add_child(laser2)
+	shooting.play()
+	laser2.position = right_gun.global_position
 	laser2.apply_force((target.global_position - right_gun.global_position).normalized() * SHOT_SPEED)
 	
 	await get_tree().create_timer(.2).timeout
 	
 
 func _on_player_hack(player: Player, hacked_instance_id: int):
-	if hacked_instance_id == get_instance_id():
+	if hacked_instance_id == get_instance_id() and health/HEALTH < .5:
 		self.player = player
 	else:
 		self.player = null
@@ -113,13 +126,11 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 
 func _on_timer_timeout():
-	if target.hacked_object in shooting_range.get_overlapping_bodies():
-		look_at(target.global_position)
-		rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
-		ai_shoot()
+	if !player:
+		if target.hacked_object in shooting_range.get_overlapping_bodies():
+			look_at(target.global_position)
+			rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
+			ai_shoot()
 	var my_random_number = rng.randf_range(1, 1.5)
 	timer.wait_time = my_random_number
 	timer.start()
-
-#func _on_navigation_agent_3d_path_changed():
-	#timer.start()

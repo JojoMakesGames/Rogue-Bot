@@ -1,58 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://67rudythaa0y"]
+[gd_scene load_steps=3 format=3 uid="uid://67rudythaa0y"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/TitleScreen_Menu.gd" id="1_5gquu"]
 [ext_resource type="PackedScene" uid="uid://ccxj7wcd2kxam" path="res://Scenes/Assets/UI/HTP.tscn" id="1_likoq"]
 
 [node name="TitleScreen_Menu" type="Node2D"]
 position = Vector2(1153, 661)
+script = ExtResource("1_5gquu")
 
-[node name="Button_Play" type="Button" parent="."]
-offset_left = -794.0
-offset_top = -293.0
-offset_right = -464.0
-offset_bottom = -185.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button_Play" type="Button" parent="CanvasLayer"]
+offset_left = 61.0
+offset_top = 424.0
+offset_right = 391.0
+offset_bottom = 532.0
 theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
-[node name="Button_Cont" type="Button" parent="."]
-offset_left = -794.0
-offset_top = -147.0
-offset_right = -464.0
-offset_bottom = -39.0
+[node name="Button_Cont" type="Button" parent="CanvasLayer"]
+offset_left = 64.0
+offset_top = 581.0
+offset_right = 394.0
+offset_bottom = 689.0
 theme_override_font_sizes/font_size = 40
 text = "CONTROLS"
 
-[node name="Button_Quit" type="Button" parent="."]
-offset_left = -794.0
-offset_top = 47.0
-offset_right = -464.0
-offset_bottom = 155.0
+[node name="Button_Quit" type="Button" parent="CanvasLayer"]
+offset_left = 68.0
+offset_top = 757.0
+offset_right = 398.0
+offset_bottom = 865.0
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -878.0
-offset_top = -462.0
-offset_right = -13.0
-offset_bottom = -308.0
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = 179.0
+offset_right = 913.0
+offset_bottom = 333.0
 theme_override_font_sizes/normal_font_size = 80
 text = "ROGUEBOT"
+
+[node name="Panel" parent="CanvasLayer" instance=ExtResource("1_likoq")]
+visible = false
+offset_left = -501.0
+offset_top = -448.0
+offset_right = 805.864
+offset_bottom = 438.734
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Node2D" parent="." instance=ExtResource("1_likoq")]
-visible = false
-
-[connection signal="pressed" from="Button_Cont" to="Button_Play" method="hide"]
-[connection signal="pressed" from="Button_Cont" to="Button_Cont" method="hide"]
-[connection signal="pressed" from="Button_Cont" to="Button_Quit" method="hide"]
-[connection signal="pressed" from="Button_Cont" to="RichTextLabel" method="hide"]
-[connection signal="pressed" from="Button_Cont" to="Node2D" method="show"]
-[connection signal="pressed" from="Node2D/Panel/Button_Return" to="Button_Play" method="show"]
-[connection signal="pressed" from="Node2D/Panel/Button_Return" to="Button_Cont" method="show"]
-[connection signal="pressed" from="Node2D/Panel/Button_Return" to="Button_Quit" method="show"]
-[connection signal="pressed" from="Node2D/Panel/Button_Return" to="RichTextLabel" method="show"]
-[connection signal="pressed" from="Node2D/Panel/Button_Return" to="Node2D" method="hide"]
-
-[editable path="Node2D"]
+[connection signal="pressed" from="CanvasLayer/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button_Cont" to="." method="_on_button_cont_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button_Quit" to="." method="_on_button_quit_pressed"]

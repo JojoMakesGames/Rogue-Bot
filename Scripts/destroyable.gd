@@ -3,6 +3,7 @@ extends Node3D
 class_name Destroyable
 
 @export var POINTS: int
+@export var HEALTH: int
 @export var mesh: MeshInstance3D
 @onready var hitbox: Area3D = $Hitbox
 @onready var explosion = load("res://Scenes/Assets/particles/parts_explode.tscn")

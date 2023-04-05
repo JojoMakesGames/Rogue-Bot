@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://by71sgyloj4wm"]
+[gd_scene load_steps=10 format=3 uid="uid://by71sgyloj4wm"]
 
 [ext_resource type="Script" path="res://Scripts/laser_shot.gd" id="1_vdn03"]
-[ext_resource type="AudioStream" uid="uid://yvfxo7vurch8" path="res://Assets/SFX/Laser1.ogg" id="2_fanfq"]
 [ext_resource type="Texture2D" uid="uid://lr662ch4i5sl" path="res://Scenes/Assets/particles/star_09.png" id="4_4uwj1"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0m8uc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cml0"]
 albedo_color = Color(0.584314, 0.0784314, 0.266667, 1)
@@ -36,10 +33,13 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_dbbdg"]
 material = SubResource("StandardMaterial3D_vgi13")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_u1soj"]
+radius = 0.704822
+
 [node name="LaserShot" type="RigidBody3D"]
-collision_mask = 0
+collision_layer = 11
+collision_mask = 11
 mass = 1.1
-physics_material_override = SubResource("PhysicsMaterial_0m8uc")
 gravity_scale = 2.66454e-15
 script = ExtResource("1_vdn03")
 
@@ -50,22 +50,33 @@ mesh = SubResource("SphereMesh_gtii3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7anad")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_fanfq")
-autoplay = true
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.8
 autostart = true
 
 [node name="LaserTrail2" type="GPUParticles3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 amount = 200
-lifetime = 0.5
-fixed_fps = 120
+lifetime = 0.1
+fixed_fps = 60
+interpolate = false
+fract_delta = false
 visibility_aabb = AABB(-0.490777, -0.556609, -0.50289, 1.0128, 1.414, 1.00578)
-trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_uk346")
 draw_pass_1 = SubResource("QuadMesh_dbbdg")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.545098, 0.141176, 0.0627451, 1)
+light_size = 5.0
+shadow_enabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 42
+collision_mask = 42
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_u1soj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
