@@ -15,6 +15,7 @@ class_name PoliceBot
 @export var texture: Texture2D
 @onready var timer: Timer = $Timer
 @onready var shooting_range: Area3D = $ShootingRange
+var rng = RandomNumberGenerator.new()
 var input_direction: Vector3
 var movement_delta: float
 var looking_direction: Vector3
@@ -44,14 +45,9 @@ func _physics_process(delta):
 		state_machine.state.physics_update(delta)
 	else:
 		if nav.is_navigation_finished():
-			rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
 			nav.set_target_position(target.position)
 			return
-		if timer.is_stopped():
-			if target.hacked_object in shooting_range.get_overlapping_bodies():
-				look_at(target.global_position)
-				ai_shoot()
-			nav.set_target_position(target.position)
+		nav.set_target_position(target.position)
 		movement_delta = SPEED * delta * .5
 		var next_path_position: Vector3 = nav.get_next_path_position()
 		var current_agent_position: Vector3 = global_transform.origin
@@ -111,14 +107,19 @@ func _on_look(direction: Vector3):
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	animations.play("Walk")
 	look_at(nav.get_final_position())
+	rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
+		
 	
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 
-
-func _on_navigation_agent_3d_path_changed():
+func _on_timer_timeout():
+	if target.hacked_object in shooting_range.get_overlapping_bodies():
+		look_at(target.global_position)
+		rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
+		ai_shoot()
+	var my_random_number = rng.randf_range(1, 1.5)
+	timer.wait_time = my_random_number
 	timer.start()
 
-
-func _on_timer_timeout():
-	print('reset')
-	timer.stop()
+#func _on_navigation_agent_3d_path_changed():
+	#timer.start()
