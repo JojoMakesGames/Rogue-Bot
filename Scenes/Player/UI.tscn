@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlmug7gcaipmb"]
+[gd_scene load_steps=4 format=3 uid="uid://dlmug7gcaipmb"]
 
 [ext_resource type="Script" path="res://Scripts/player_ui.gd" id="1_u8orw"]
+[ext_resource type="Texture2D" uid="uid://buosafhqeieyo" path="res://Assets/UI/Ui_policebot.png" id="2_jba8c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0r3gm"]
 font_size = 100
@@ -47,3 +48,20 @@ offset_bottom = 143.0
 text = "Test
 "
 label_settings = SubResource("LabelSettings_0r3gm")
+
+[node name="DangerMeter" type="Node2D" parent="."]
+position = Vector2(1783, 272)
+
+[node name="Level1" type="Sprite2D" parent="DangerMeter"]
+modulate = Color(0.67451, 0.988235, 0, 1)
+texture = ExtResource("2_jba8c")
+
+[node name="Level2" type="Sprite2D" parent="DangerMeter"]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(81, -24)
+texture = ExtResource("2_jba8c")
+
+[node name="Level3" type="Sprite2D" parent="DangerMeter"]
+modulate = Color(0.854902, 0, 0.313726, 1)
+position = Vector2(139, -52)
+texture = ExtResource("2_jba8c")
