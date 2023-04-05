@@ -78,3 +78,4 @@ shoot={
 3d_physics/layer_4="Destruction"
 3d_physics/layer_5="ShootingRange"
 3d_physics/layer_6="Hitbox"
+3d_physics/layer_7="EnemyShot"

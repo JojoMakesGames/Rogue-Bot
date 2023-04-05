@@ -15,14 +15,13 @@ radius = 0.0995621
 height = 0.251359
 radius = 0.107746
 
-[node name="Barrel" type="RigidBody3D" node_paths=PackedStringArray("mesh")]
+[node name="Barrel" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 collision_layer = 2
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_tppq3")
 script = ExtResource("1_7kiax")
-POINTS = 2
-mesh = NodePath("barrel/tmpParent/barrel2")
+POINTS = 200
 
 [node name="barrel" parent="." instance=ExtResource("1_kn2f0")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.08165e-12, 2.08165e-12, 2.08165e-12)
@@ -32,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.0
 
 [node name="Hitbox" type="Area3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
-collision_layer = 40
+collision_layer = 8
 collision_mask = 40
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]

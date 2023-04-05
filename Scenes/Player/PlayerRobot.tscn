@@ -20,7 +20,7 @@ collision_mask = 15
 script = ExtResource("1_ewkii")
 SPEED = 5.0
 JUMP_VELOCITY = 4.0
-HEALTH = 20.0
+HEALTH = 120.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508653, 0)

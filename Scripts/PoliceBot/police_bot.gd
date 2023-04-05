@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name PoliceBot
 
+signal set_health(percentage: float)
+
 @export var SPEED = 2
 @export var HEALTH: float = 500
 @export var SHOT_SPEED = 500
@@ -9,6 +11,7 @@ class_name PoliceBot
 @export var laser: PackedScene
 @export var texture: Texture2D
 
+@onready var explosion = load("res://Scenes/Assets/particles/parts_explode.tscn")
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var state_machine: PoliceStateMachine = $PoliceStateMachine
 @onready var left_gun: Node3D = $LeftGun
@@ -18,6 +21,7 @@ class_name PoliceBot
 @onready var timer: Timer = $Timer
 @onready var shooting_range: Area3D = $ShootingRange
 @onready var shooting: AudioStreamPlayer3D = $Shooting
+@onready var hitbox: Area3D = $Hitbox
 
 var rng = RandomNumberGenerator.new()
 var input_direction: Vector3
@@ -55,15 +59,17 @@ func _physics_process(delta):
 		if nav.is_navigation_finished():
 			nav.set_target_position(target.position)
 			return
-		nav.set_target_position(target.position)
-		movement_delta = SPEED * delta * .5
-		var next_path_position: Vector3 = nav.get_next_path_position()
-		var current_agent_position: Vector3 = global_transform.origin
-		var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
-		nav.set_velocity(new_velocity)
+		if target != null:
+			nav.set_target_position(target.position)
+			movement_delta = SPEED * delta * .5
+			var next_path_position: Vector3 = nav.get_next_path_position()
+			var current_agent_position: Vector3 = global_transform.origin
+			var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
+			nav.set_velocity(new_velocity)
 
 		
 func shoot(callback: Callable):
+	health += 40
 	var parent = get_parent()
 	var laser1: RigidBody3D = laser.instantiate()
 	laser1.position = left_gun.global_position
@@ -76,7 +82,7 @@ func shoot(callback: Callable):
 	var laser2: RigidBody3D = laser.instantiate()
 	laser2.parent = get_node("CollisionShape3D")
 	laser2.position = right_gun.global_position
-	shooting.play()	
+	shooting.play()
 	parent.add_child(laser2)
 	laser2.apply_force(looking_direction * SHOT_SPEED)
 	
@@ -131,10 +137,27 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 
 func _on_timer_timeout():
 	if !player:
-		if target.hacked_object in shooting_range.get_overlapping_bodies():
+		if target != null and target.hacked_object in shooting_range.get_overlapping_bodies():
 			look_at(target.global_position)
 			rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
 			ai_shoot()
 	var my_random_number = rng.randf_range(1, 1.5)
 	timer.wait_time = my_random_number
 	timer.start()
+
+
+func _on_hitbox_body_entered(body):
+	print("entered police")
+	health = health - 20
+	set_health.emit(health/HEALTH)
+	if health < 0:
+		var tween = get_tree().create_tween()
+		tween.set_parallel(true)
+		var explode = explosion.instantiate() as Node3D
+		get_tree().get_root().add_child(explode)
+		explode.global_position = global_position
+		tween.tween_property(explode, "scale", Vector3(5,5,5), 1)
+		tween.set_parallel(false)
+		if player:
+			ChaosTracker.lose.emit()
+		queue_free()

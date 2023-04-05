@@ -7,6 +7,7 @@ diffuse_mode = 3
 albedo_color = Color(0.498039, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2olbv"]
+resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ytmol")
 top_radius = 0.1
 bottom_radius = 0.1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c4sdorvli8iwr"]
+[gd_scene load_steps=39 format=3 uid="uid://c4sdorvli8iwr"]
 
 [ext_resource type="PackedScene" uid="uid://d4jp03ufmwok0" path="res://Assets/policebot/policebot.glb" id="1_3kk6d"]
 [ext_resource type="Script" path="res://Scenes/Levels/TitleScreen.gd" id="1_qrc4x"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ux3b2iauikuc" path="res://Assets/city/large_buildingF.glb" id="7_wigky"]
 [ext_resource type="PackedScene" uid="uid://nn6xy01rn0fd" path="res://Assets/city/large_buildingE.glb" id="8_1sqsk"]
 [ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="11_s6l2h"]
-[ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="12_1dpph"]
 [ext_resource type="PackedScene" uid="uid://b5b3poms6pdnc" path="res://Assets/city/roads/road_straight.glb" id="13_feu2q"]
 [ext_resource type="PackedScene" uid="uid://cvigno8ob2wr0" path="res://Assets/city/roads/road_intersection.glb" id="14_11bvx"]
 [ext_resource type="PackedScene" uid="uid://ccig4owv2lklq" path="res://Assets/city/roads/road_crossing.glb" id="16_tah6p"]
@@ -169,10 +168,6 @@ shape = SubResource("BoxShape3D_7tpst")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60697, 1.63396, 0.571829)
 
 [node name="PlayerRobot" parent="." instance=ExtResource("11_s6l2h")]
-
-[node name="Player" parent="." node_paths=PackedStringArray("hacked_object") instance=ExtResource("12_1dpph")]
-visible = false
-hacked_object = NodePath("../PlayerRobot")
 
 [node name="road_straight5" parent="." instance=ExtResource("13_feu2q")]
 transform = Transform3D(19.073, 0, 0, 0, 5, 0, 0, 0, 19.073, 20.149, -1.67778, 31.692)

@@ -8,5 +8,5 @@ func _ready():
 		parent.set_health.connect(_on_set_health)
 
 func _on_set_health(percentage: float):
-	print(percentage)
 	mesh.height = percentage
+

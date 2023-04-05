@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://unkgibbg86cw"]
+[gd_scene load_steps=21 format=3 uid="uid://unkgibbg86cw"]
 
 [ext_resource type="Script" path="res://Scripts/StateMachine/player_car.gd" id="1_0lgpy"]
 [ext_resource type="Texture2D" uid="uid://dq1nllc1tw5cc" path="res://Assets/UI/Ui_carbot.png" id="2_kff5s"]
+[ext_resource type="PackedScene" uid="uid://dy7s7ekdxg2eb" path="res://Scenes/Assets/health_bar.tscn" id="3_vydnb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44whk"]
 resource_name = "carTire"
@@ -274,12 +275,30 @@ shadow_mesh = SubResource("ArrayMesh_cbho0")
 points = PackedVector3Array(0.75, 0.59999, -0.322979, 0.75, 0.499971, -0.322979, 0.75, 0.59999, -0.423106, 0.449883, 1.09996, 0.749887, 0.649863, 0.476684, 0.960777, 0.649863, 0.437745, 1.05494, 0.649863, 0.375646, 1.13561, 0.649863, 0.199912, 1.34987, 0.75, 0.499971, -0.423106, 0.649863, 0, 1.34987, 0.649863, 0.199912, -1.10013, 0.549873, 0.59999, -1.1502, 0.449883, 1.09996, -0.15022, 0.0499217, 1.3, 0.549892, 0.549873, 0.499971, 1.45, 0.620644, 0.199912, 1.42069, 0.649863, 0, -1.10013, 0.620644, 0, 1.42069, 0.620644, 0.199912, -1.17095, 0.549873, 0.199912, -1.2, -0.55002, 0.59999, -1.1502, 0.0499217, 1.3, 0.0497749, -0.0500685, 1.3, 0.549892, -0.55002, 0.499971, 1.45, 0.549873, 0, 1.45, 0.620644, 0, -1.17095, 0.549873, 0, -1.2, -0.55002, 0.199912, -1.2, -0.620791, 0.199912, -1.17095, -0.65001, 0.199912, -1.10013, -0.75, 0.59999, -0.423106, -0.450029, 1.09996, -0.15022, -0.0500685, 1.3, 0.0497749, -0.450029, 1.09996, 0.749887, -0.65001, 0.437745, 1.05494, -0.65001, 0.375646, 1.13561, -0.65001, 0.199912, 1.34987, -0.620791, 0.199912, 1.42069, -0.55002, 0, 1.45, -0.55002, 0, -1.2, -0.620791, 0, -1.17095, -0.65001, 0, -1.10013, -0.75, 0.499971, -0.423106, -0.75, 0.59999, -0.322979, -0.65001, 0.476684, 0.960777, -0.65001, 0, 1.34987, -0.620791, 0, 1.42069, -0.75, 0.499971, -0.322979)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p0om7"]
+radius = 5.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mabvh"]
+radius = 0.95686
+height = 3.47498
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytmol"]
+diffuse_mode = 3
+albedo_color = Color(0.498039, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e1scw"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ytmol")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
 
 [node name="Car" type="VehicleBody3D"]
-collision_mask = 7
+collision_layer = 9
+collision_mask = 35
 mass = 30.0
 script = ExtResource("1_0lgpy")
 texture = ExtResource("2_kff5s")
+HEALTH = 1000.0
 
 [node name="wheel_FL" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-0.999992, -0.00384436, 0.000883097, -0.00384196, 0.999989, 0.0027055, -0.000893496, 0.00270208, -0.999996, -0.299327, -0.113659, -0.760265)
@@ -353,8 +372,34 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("SphereShape3D_p0om7")
 
 [node name="CameraPlacement" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2819, 6.74624)
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, -0.0108557, -0.999941, 0, 0.999941, -0.0108557, 0, 0.15843, -0.0102087)
+shape = SubResource("CapsuleShape3D_mabvh")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_vydnb")]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 2.44494e-08, 1.43553, 0)
+mesh = SubResource("CylinderMesh_e1scw")
+skeleton = NodePath("../DetectionArea")
+parent = NodePath("..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435107, 0.190141, -1.27435)
+light_energy = 5.0
+spot_range = 10.4031
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.283805, 0.190141, -1.27435)
+light_energy = 5.0
+spot_range = 10.1032
+
+[connection signal="set_health" from="." to="HealthBar" method="_on_set_health"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
