@@ -31,20 +31,19 @@ transform = Transform3D(-1, -1.21652e-31, -8.74228e-08, 4.02216e-24, 1, 0, 8.742
 transform = Transform3D(-1, -1.21652e-31, -8.74228e-08, 4.02216e-24, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="policebot/metarig" index="0"]
-bones/3/position = Vector3(0.0436122, 1.53522, 0.00712281)
-bones/3/rotation = Quaternion(-0.00178093, 0.683654, 0.729802, 0.00189113)
-bones/5/position = Vector3(-0.043612, 1.53522, 0.00712282)
-bones/5/rotation = Quaternion(0.00178093, 0.683654, 0.729802, -0.00189113)
-bones/7/position = Vector3(0.021227, 1.91322, 0.205851)
-bones/7/rotation = Quaternion(0.707526, 0.704831, -0.036199, 0.036185)
-bones/8/rotation = Quaternion(-0.273049, 0.652324, 0.651187, 0.275451)
-bones/10/position = Vector3(0.888225, 0.886611, -1.04028)
-bones/10/rotation = Quaternion(-0.484428, 0.507198, -0.492696, 0.515101)
-bones/12/position = Vector3(-0.021227, 1.91322, 0.205851)
-bones/12/rotation = Quaternion(0.707526, -0.704831, 0.036199, 0.036185)
-bones/13/rotation = Quaternion(-0.273049, -0.652324, -0.651187, 0.275451)
-bones/15/position = Vector3(-0.888225, 0.886611, -1.04028)
-bones/15/rotation = Quaternion(-0.484428, -0.507198, 0.492696, 0.515101)
+bones/0/position = Vector3(-1.7818e-17, 2.31463, 0.140029)
+bones/6/position = Vector3(1.55279, 3.48817, 1.5684)
+bones/7/position = Vector3(0.021227, 2.30204, 0.205851)
+bones/7/rotation = Quaternion(0.731316, 0.680115, -0.0374207, 0.0349197)
+bones/8/rotation = Quaternion(-0.0717284, 0.671584, 0.728096, 0.117073)
+bones/9/rotation = Quaternion(0.0165105, -0.00458824, -0.343925, 0.938841)
+bones/10/position = Vector3(0.888225, 1.27544, -1.04028)
+bones/11/position = Vector3(-1.55279, 3.48817, 1.5684)
+bones/12/position = Vector3(-0.021227, 2.30204, 0.205851)
+bones/12/rotation = Quaternion(0.692995, -0.719123, 0.0354529, 0.0369158)
+bones/13/rotation = Quaternion(-0.417491, -0.579145, -0.569404, 0.407519)
+bones/14/rotation = Quaternion(-0.00953818, 0.0163909, 0.784332, 0.620051)
+bones/15/position = Vector3(-0.888225, 1.27544, -1.04028)
 
 [node name="Cube001" parent="policebot/metarig/Skeleton3D" index="1"]
 transform = Transform3D(1, 4.02216e-24, 0, 4.02216e-24, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -83,6 +82,7 @@ path_desired_distance = 12.0
 agent_height_offset = -2.5
 path_max_distance = 38.81
 avoidance_enabled = true
+radius = 3.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 1, 0, 1)
 

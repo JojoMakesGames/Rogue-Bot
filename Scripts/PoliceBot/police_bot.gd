@@ -45,7 +45,8 @@ func _physics_process(delta):
 			print('finished')
 			if timer.is_stopped():
 				ai_shoot()
-			nav.set_target_position(target.position)
+				nav.set_target_position(target.position)
+				
 			return
 		movement_delta = SPEED * delta * .5
 		var next_path_position: Vector3 = nav.get_next_path_position()
@@ -72,6 +73,7 @@ func shoot(callback: Callable):
 	callback.call()
 	
 func ai_shoot():
+	animations.play("Shoot1")
 	timer.start()
 	var parent = get_parent()
 	var laser1: RigidBody3D = laser.instantiate()
@@ -79,6 +81,7 @@ func ai_shoot():
 	parent.add_child(laser1)
 	laser1.apply_force((target.global_position - left_gun.global_position).normalized() * SHOT_SPEED)
 	
+	animations.play("Shoot2")
 	await get_tree().create_timer(.2).timeout
 	var laser2: RigidBody3D = laser.instantiate()
 	laser2.position = right_gun.global_position
@@ -103,6 +106,7 @@ func _on_look(direction: Vector3):
 	
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	look_at(target.global_position)
+	animations.play("Walk")
 	rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 

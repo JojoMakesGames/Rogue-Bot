@@ -47,3 +47,31 @@ shape = SubResource("WorldBoundaryShape3D_75g6m")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 mesh = SubResource("PlaneMesh_kax53")
+
+[node name="policebot2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -3.47633, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -10.0979, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0.25667, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 4.4168, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot6" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 23.3897, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot7" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -13.5573, 3.95919, 23.0624)
+target = NodePath("../Player")
+
+[node name="policebot8" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 9.88509, 3.95919, 23.0624)
+target = NodePath("../Player")
