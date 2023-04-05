@@ -52,6 +52,10 @@ func change_hacked_object(new_hacked_object: Node3D, init: bool = false):
 		var spark = sparks.instantiate()
 		add_child(spark)
 		spark.scale = Vector3(3,3,3)
+		tween.set_parallel()
+		tween.tween_property(camera, "fov", camera.fov * .8, .5).set_ease(Tween.EASE_IN_OUT)
+		tween.set_parallel(false)
+		tween.tween_property(camera, "fov", camera.fov, .2).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_callback(spark.queue_free)
 	
 	camera.offset = hacked_object.get_node("CameraPlacement").position

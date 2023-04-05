@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://brmaxt4griigy"]
+[gd_scene load_steps=9 format=3 uid="uid://brmaxt4griigy"]
 
-[ext_resource type="PackedScene" uid="uid://bn2rq3ivx3mpk" path="res://Scenes/Assets/Props/machine_generator.tscn" id="1_ediik"]
 [ext_resource type="PackedScene" uid="uid://cwjd6mwvvsa62" path="res://Scenes/Player/PlayerRobot.tscn" id="1_mc7p2"]
-[ext_resource type="PackedScene" uid="uid://4s4lbqf3pfyx" path="res://Scenes/Assets/Props/dish.tscn" id="2_0m11n"]
-[ext_resource type="PackedScene" uid="uid://unkgibbg86cw" path="res://Scenes/Player/Car.tscn" id="3_sbjw1"]
 [ext_resource type="PackedScene" uid="uid://b816mm6itings" path="res://Scenes/Player/Player.tscn" id="3_vqpv8"]
 [ext_resource type="PackedScene" uid="uid://b5470ita3oy35" path="res://Scenes/PoliceBot.tscn" id="4_0edg3"]
-[ext_resource type="PackedScene" uid="uid://co7446jwa8k46" path="res://Scenes/Teleporter.tscn" id="5_dd3mb"]
-[ext_resource type="PackedScene" uid="uid://bi3m7ksxqcdau" path="res://Scenes/Assets/Props/barrel.tscn" id="6_wfg8a"]
-[ext_resource type="PackedScene" uid="uid://brspva8g7wkq" path="res://Scenes/Assets/Props/barrel_pipes.tscn" id="7_0hpkk"]
-[ext_resource type="PackedScene" uid="uid://dtqtqo8864alt" path="res://Scenes/Assets/Props/generator.tscn" id="9_oq8wa"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_v5k7y"]
+vertices = PackedVector3Array(-43.5, 0.5, -49.5, -49.5, 0.5, -49.5, -49.5, 0.5, -43.5, -49.5, 0.5, 43.25, -49.5, 0.5, 49.5, -43.5, 0.5, 49.5, 49.5, 0.5, -43.5, 49.5, 0.5, -49.5, 43.25, 0.5, -49.5, 43.25, 0.5, 49.5, 49.5, 0.5, 49.5, 49.5, 0.5, 43.25, -37.25, 0.5, -49.5, -43.5, 0.5, -49.5, -49.5, 0.5, -43.5, -49.5, 0.5, -37.25, -49.5, 0.5, 43.25, -43.5, 0.5, 49.5, -37.25, 0.5, 49.5, -49.5, 0.5, 37, 49.5, 0.5, -37.25, 49.5, 0.5, -43.5, 43.25, 0.5, -49.5, 37, 0.5, -49.5, 37, 0.5, 49.5, 43.25, 0.5, 49.5, 49.5, 0.5, 43.25, -49.5, 0.5, 0, -49.5, 0.5, 6, -6.25, 0.5, 49.5, 18.5, 0.5, 49.5, 49.5, 0.5, 24.75, 49.5, 0.5, 18.5, 12.25, 0.5, 49.5, 49.5, 0.5, -6.25, 49.5, 0.5, -12.5, 12.25, 0.5, -49.5, 6, 0.5, -49.5, 37, 0.5, 49.5, 49.5, 0.5, 43.25, 49.5, 0.5, 37, 30.75, 0.5, 49.5, -31, 0.5, -49.5, -37.25, 0.5, -49.5, -49.5, 0.5, -37.25, -49.5, 0.5, -31, -49.5, 0.5, 37, -37.25, 0.5, 49.5, -31, 0.5, 49.5, -49.5, 0.5, 30.75, 49.5, 0.5, -31, 49.5, 0.5, -37.25, 37, 0.5, -49.5, 30.75, 0.5, -49.5, -12.5, 0.5, -49.5, -18.75, 0.5, -49.5, -49.5, 0.5, -18.75, -49.5, 0.5, -12.5, -49.5, 0.5, 18.5, -18.75, 0.5, 49.5, -12.5, 0.5, 49.5, -49.5, 0.5, 12.25, 49.5, 0.5, -6.25, 6, 0.5, -49.5, 0, 0.5, -49.5, 49.5, 0.5, 0, 49.5, 0.5, -12.5, 49.5, 0.5, -18.75, 18.5, 0.5, -49.5, 12.25, 0.5, -49.5, 30.75, 0.5, 49.5, 49.5, 0.5, 37, 49.5, 0.5, 30.75, 24.75, 0.5, 49.5, -49.5, 0.5, 24.75, -49.5, 0.5, 30.75, -31, 0.5, 49.5, -24.75, 0.5, 49.5, 49.5, 0.5, -31, 30.75, 0.5, -49.5, 24.75, 0.5, -49.5, 49.5, 0.5, -24.75, -24.75, 0.5, -49.5, -31, 0.5, -49.5, -49.5, 0.5, -31, -49.5, 0.5, -24.75, 49.5, 0.5, 0, 0, 0.5, -49.5, -49.5, 0.5, 0, -6.25, 0.5, 49.5, 0, 0.5, 49.5, 49.5, 0.5, 6, 12.25, 0.5, 49.5, 49.5, 0.5, 18.5, 49.5, 0.5, 12.25, 6, 0.5, 49.5, 24.75, 0.5, 49.5, 49.5, 0.5, 30.75, 49.5, 0.5, 24.75, 18.5, 0.5, 49.5, 0, 0.5, -49.5, -6.25, 0.5, -49.5, -49.5, 0.5, -6.25, -49.5, 0.5, 0, 6, 0.5, 49.5, 49.5, 0.5, 12.25, 49.5, 0.5, 6, 0, 0.5, 49.5, -49.5, 0.5, 24.75, -24.75, 0.5, 49.5, -18.75, 0.5, 49.5, -49.5, 0.5, 18.5, 49.5, 0.5, -18.75, 49.5, 0.5, -24.75, 24.75, 0.5, -49.5, 18.5, 0.5, -49.5, -18.75, 0.5, -49.5, -24.75, 0.5, -49.5, -49.5, 0.5, -24.75, -49.5, 0.5, -18.75, -6.25, 0.5, -49.5, -12.5, 0.5, -49.5, -49.5, 0.5, -12.5, -49.5, 0.5, -6.25, -49.5, 0.5, 12.25, -12.5, 0.5, 49.5, -6.25, 0.5, 49.5, -49.5, 0.5, 6)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(26, 25, 24), PackedInt32Array(29, 28, 27), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 45), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(51, 50, 52), PackedInt32Array(52, 50, 53), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 57), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 61), PackedInt32Array(63, 62, 64), PackedInt32Array(64, 62, 65), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(71, 70, 72), PackedInt32Array(72, 70, 73), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 77), PackedInt32Array(79, 78, 80), PackedInt32Array(80, 78, 81), PackedInt32Array(83, 82, 84), PackedInt32Array(84, 82, 85), PackedInt32Array(91, 90, 86), PackedInt32Array(86, 90, 89), PackedInt32Array(86, 89, 88), PackedInt32Array(86, 88, 87), PackedInt32Array(93, 92, 94), PackedInt32Array(94, 92, 95), PackedInt32Array(97, 96, 98), PackedInt32Array(98, 96, 99), PackedInt32Array(101, 100, 102), PackedInt32Array(102, 100, 103), PackedInt32Array(105, 104, 106), PackedInt32Array(106, 104, 107), PackedInt32Array(109, 108, 110), PackedInt32Array(110, 108, 111), PackedInt32Array(113, 112, 114), PackedInt32Array(114, 112, 115), PackedInt32Array(117, 116, 118), PackedInt32Array(118, 116, 119), PackedInt32Array(121, 120, 122), PackedInt32Array(122, 120, 123), PackedInt32Array(125, 124, 126), PackedInt32Array(126, 124, 127)]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7kq0v"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_75g6m"]
 
@@ -22,47 +21,29 @@ size = Vector2(100, 100)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Machine_Generator" parent="." instance=ExtResource("1_ediik")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5168, 0, 0)
-
-[node name="PlayerRobot2" parent="." instance=ExtResource("1_mc7p2")]
-transform = Transform3D(0.999999, -0.000961596, 0.00037555, 0.000961698, 0.999999, -0.00026015, -0.000375287, 0.00026053, 1, -9.21816, 2.98003, 0)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-shape = SubResource("WorldBoundaryShape3D_75g6m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("PlaneMesh_kax53")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.925831, -0.0248368, 0.377121, -0.377938, -0.0608425, 0.92383, 7.44383e-18, -0.997838, -0.0657166, 0, 3.79025, 31.5465)
 
-[node name="Car" parent="." instance=ExtResource("3_sbjw1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106649, 2.71056, 0.0276356)
-
 [node name="PlayerRobot" parent="." instance=ExtResource("1_mc7p2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26309, 3.69914, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26309, 0.295774, 0)
 
 [node name="Player" parent="." node_paths=PackedStringArray("hacked_object") instance=ExtResource("3_vqpv8")]
 hacked_object = NodePath("../PlayerRobot")
 
-[node name="policebot" parent="." instance=ExtResource("4_0edg3")]
+[node name="policebot" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_0edg3")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -3.47633, 3.95919, 23.0624)
+target = NodePath("../Player")
 
-[node name="Teleporter" parent="." instance=ExtResource("5_dd3mb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342931, 10.1139)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_v5k7y")
 
-[node name="Barrel" parent="." instance=ExtResource("6_wfg8a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99405, 1.94473, 2.08165e-12)
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_7kq0v")
 
-[node name="Barrel_Pipes" parent="." instance=ExtResource("7_0hpkk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74795, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_75g6m")
 
-[node name="Generator" parent="." instance=ExtResource("9_oq8wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49089, 0, 9.40415)
-
-[node name="Dish2" parent="." instance=ExtResource("2_0m11n")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 10.8132, 0, 12.9225)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+mesh = SubResource("PlaneMesh_kax53")

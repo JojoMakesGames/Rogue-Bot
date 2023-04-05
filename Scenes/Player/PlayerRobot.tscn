@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwjd6mwvvsa62"]
+[gd_scene load_steps=8 format=3 uid="uid://cwjd6mwvvsa62"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot.gd" id="1_ewkii"]
 [ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
-[ext_resource type="Texture2D" uid="uid://bnn8y4f5b7xti" path="res://Assets/UI/Ui_playerbot.png" id="2_pjw2e"]
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="3_lofgt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f4m3j"]
@@ -23,7 +22,6 @@ collision_mask = 15
 script = ExtResource("1_ewkii")
 SPEED = 5.0
 JUMP_VELOCITY = 4.0
-texture = ExtResource("2_pjw2e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508653, 0)
