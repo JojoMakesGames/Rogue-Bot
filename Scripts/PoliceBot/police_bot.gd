@@ -39,7 +39,8 @@ func _ready():
 	ChaosTracker.player_hack.connect(_on_player_hack)
 	ChaosTracker.player_direction.connect(_on_direction)
 	ChaosTracker.looking_direction.connect(_on_look)
-	nav.set_target_position(target.global_position)
+	if target != null:
+		nav.set_target_position(target.global_position)
 	timer.start()
 	health = HEALTH
 

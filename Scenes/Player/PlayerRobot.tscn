@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwjd6mwvvsa62"]
+[gd_scene load_steps=11 format=3 uid="uid://cwjd6mwvvsa62"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot.gd" id="1_ewkii"]
 [ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
+[ext_resource type="Texture2D" uid="uid://bnn8y4f5b7xti" path="res://Assets/UI/Ui_playerbot.png" id="2_xdbi6"]
 [ext_resource type="PackedScene" uid="uid://b62g8x5aeenms" path="res://Assets/robot/Robot.glb" id="3_lofgt"]
 [ext_resource type="PackedScene" uid="uid://dy7s7ekdxg2eb" path="res://Scenes/Assets/health_bar.tscn" id="4_dpvf8"]
 
@@ -16,7 +17,7 @@ radius = 0.559026
 diffuse_mode = 3
 albedo_color = Color(0.498039, 0, 0, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_k872t"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_oao64"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ytmol")
 top_radius = 0.1
@@ -33,6 +34,7 @@ script = ExtResource("1_ewkii")
 SPEED = 5.0
 JUMP_VELOCITY = 4.0
 HEALTH = 120.0
+texture = ExtResource("2_xdbi6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.508653, 0)
@@ -121,7 +123,7 @@ shape = SubResource("SphereShape3D_oub35")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_dpvf8")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.00319228, 1.69674, 0.000633001)
-mesh = SubResource("CylinderMesh_k872t")
+mesh = SubResource("CylinderMesh_oao64")
 parent = NodePath("..")
 
 [node name="Hitbox" type="Area3D" parent="."]
@@ -132,6 +134,7 @@ collision_mask = 32
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.426949, 0)
 shape = SubResource("CapsuleShape3D_vssmp")
 
+[connection signal="set_health" from="." to="HealthBar" method="_on_set_health"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="Robot"]

@@ -13,7 +13,6 @@ var direction: Vector3
 var tween: Tween
 
 func _ready():
-	tween = get_tree().create_tween()
 	camera.target = self
 	change_hacked_object(hacked_object, true)
 	ChaosTracker.player_hack.emit(self, hacked_object.get_instance_id())
@@ -24,7 +23,7 @@ func _physics_process(_delta):
 	scan_for_hackables()
 	
 func _process(delta):
-	if !tween.is_running():
+	if is_instance_valid(tween) and !tween.is_running():
 		if hacked_object != null:
 			position = hacked_object.position
 		rotation_degrees.x -= mouse_delta.y * 10.0 * delta
@@ -80,6 +79,7 @@ func scan_for_hackables():
 		current_scan = null
 		
 func _on_lose():
+	hacked_object = null
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	var lose = you_lose.instantiate()
 	add_child(lose)

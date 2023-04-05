@@ -5,7 +5,6 @@ class_name PlayerRobot
 signal set_health(percentage: float)
 
 @onready var state_machine: PlayerRobotStateMachine = $StateMachine
-@onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var animations: AnimationPlayer = $Robot/AnimationPlayer
 @onready var camera_placement: Node3D = $CameraPlacement
 @onready var head: BoneAttachment3D = $Robot/RobotArmature/Skeleton3D/Head_2
