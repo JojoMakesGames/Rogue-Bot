@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwjd6mwvvsa62"]
+[gd_scene load_steps=10 format=3 uid="uid://cwjd6mwvvsa62"]
 
 [ext_resource type="Script" path="res://Scripts/PlayerBot/StateMachine/player_robot.gd" id="1_ewkii"]
 [ext_resource type="PackedScene" uid="uid://by3pyjr8x63kb" path="res://Scenes/Player/player_robot_state_machine.tscn" id="2_304l3"]
@@ -10,6 +10,18 @@ radius = 0.341076
 height = 1.0564
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oub35"]
+radius = 0.559026
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytmol"]
+diffuse_mode = 3
+albedo_color = Color(0.498039, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g1n6c"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ytmol")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vssmp"]
 radius = 0.340042
@@ -109,6 +121,7 @@ shape = SubResource("SphereShape3D_oub35")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_dpvf8")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.00319228, 1.69674, 0.000633001)
+mesh = SubResource("CylinderMesh_g1n6c")
 parent = NodePath("..")
 
 [node name="Hitbox" type="Area3D" parent="."]

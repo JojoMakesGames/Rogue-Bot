@@ -9,7 +9,7 @@ func _ready():
 	ChaosTracker.object_destroyed.connect(_on_object_destroyed)
 	ChaosTracker.player_hack.connect(_on_hack)
 
-func _on_object_destroyed(object: Destroyable):
+func _on_object_destroyed(object: Node3D):
 	var counter = int(destruction_counter.text)
 	counter += object.POINTS
 	destruction_counter.text = str(counter)

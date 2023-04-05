@@ -10,6 +10,7 @@ signal set_health(percentage: float)
 @export var target: Node3D
 @export var laser: PackedScene
 @export var texture: Texture2D
+@export var POINTS: int = 1000
 
 @onready var explosion = load("res://Scenes/Assets/particles/parts_explode.tscn")
 @onready var camera_placement: Node3D = $CameraPlacement
@@ -116,6 +117,7 @@ func ai_shoot():
 func _on_player_hack(player: Player, hacked_instance_id: int):
 	if hacked_instance_id == get_instance_id():
 		self.player = player
+		health = 50
 	else:
 		self.player = null
 		animations.stop()
@@ -147,10 +149,10 @@ func _on_timer_timeout():
 
 
 func _on_hitbox_body_entered(body):
-	print("entered police")
 	health = health - 20
 	set_health.emit(health/HEALTH)
 	if health < 0:
+		ChaosTracker.object_destroyed.emit(self)
 		var tween = get_tree().create_tween()
 		tween.set_parallel(true)
 		var explode = explosion.instantiate() as Node3D

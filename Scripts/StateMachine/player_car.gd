@@ -24,7 +24,9 @@ func _ready():
 func _physics_process(delta):
 	if player:
 		steering = Input.get_axis("right", "left") * .8
-		engine_force = Input.get_axis("down", "up") * 150
+		engine_force = Input.get_axis("down", "up") * 100
+		rotation_degrees.x = clamp(rotation_degrees.x, 0, 0)
+		rotation_degrees.z = clamp(rotation_degrees.z, 0, 0)
 	
 func _on_player_hack(new_player: Player, hacked_instance_id: int):
 	if hacked_instance_id == get_instance_id():

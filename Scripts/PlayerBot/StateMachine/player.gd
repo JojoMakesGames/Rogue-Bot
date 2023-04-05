@@ -65,14 +65,13 @@ func change_hacked_object(new_hacked_object: Node3D, init: bool = false):
 	
 func scan_for_hackables():
 	var space_state = get_world_3d().direct_space_state
-	var forward = global_transform.basis.z * -50
+	var forward = global_transform.basis.z * -500
 	var query = PhysicsRayQueryParameters3D.create(position, forward)
 	query.set_collision_mask(4)
 	query.collide_with_areas = true
 	query.collide_with_bodies = false
 	var result = space_state.intersect_ray(query)
 	if "collider" in result:
-		print(result["collider"].get_parent())
 		current_scan = result["collider"].get_parent() as Node3D
 		if Input.is_action_just_pressed("hack") and current_scan.can_hack:
 			ChaosTracker.player_hack.emit(self, current_scan.get_instance_id())
