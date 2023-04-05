@@ -9,6 +9,7 @@ func _on_timer_timeout():
 	audio.play()
 	var instance = enemy.instantiate()
 	var root = get_tree().get_root()
+	instance.add_to_group("enemy_bots",false)
 	instance.position = spawn_location.global_position
 	instance.target = target
 	root.add_child(instance)
