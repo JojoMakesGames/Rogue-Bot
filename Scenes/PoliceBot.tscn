@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5470ita3oy35"]
+[gd_scene load_steps=9 format=3 uid="uid://b5470ita3oy35"]
 
 [ext_resource type="Script" path="res://Scripts/PoliceBot/police_bot.gd" id="1_q20i3"]
 [ext_resource type="PackedScene" uid="uid://6m04rkblxtb8" path="res://Scenes/Player/PoliceStateMachine.tscn" id="2_4gt1v"]
@@ -11,6 +11,9 @@ size = Vector3(5, 8, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ryng3"]
 size = Vector3(4.5, 4.25989, 2.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7xcn6"]
+radius = 16.5482
 
 [node name="policebot" type="CharacterBody3D"]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.85044, 2.08165e-12)
@@ -78,15 +81,23 @@ player = NodePath("..")
 animation_player = NodePath("../policebot/AnimationPlayer")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 12.0
+path_desired_distance = 15.0
 agent_height_offset = -2.5
-path_max_distance = 38.81
+path_max_distance = 25.01
 avoidance_enabled = true
 radius = 3.0
 debug_enabled = true
 debug_path_custom_color = Color(1, 1, 0, 1)
 
 [node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
+
+[node name="ShootingRange" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShootingRange"]
+shape = SubResource("SphereShape3D_7xcn6")
 
 [connection signal="path_changed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_path_changed"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

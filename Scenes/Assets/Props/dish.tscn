@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4s4lbqf3pfyx"]
+[gd_scene load_steps=5 format=3 uid="uid://4s4lbqf3pfyx"]
 
 [ext_resource type="Script" path="res://Scripts/destroyable.gd" id="1_fersm"]
 [ext_resource type="PackedScene" uid="uid://bra8qxeox83u4" path="res://Assets/props/satelliteDish_detailed.glb" id="1_ral0g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bnvid"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wya5"]
 size = Vector3(0.728269, 1.22176, 0.552219)
@@ -10,6 +12,7 @@ size = Vector3(0.728269, 1.22176, 0.552219)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_bnvid")
 script = ExtResource("1_fersm")
 POINTS = 15
 
