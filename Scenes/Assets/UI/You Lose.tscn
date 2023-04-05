@@ -26,6 +26,12 @@ layout_mode = 2
 mouse_default_cursor_shape = 3
 theme_override_font_sizes/font_size = 50
 action_mode = 0
-text = "Return to Title"
+text = "Retry"
+
+[node name="ReturnToTitle" type="Button" parent="CanvasLayer/CenterContainer/Panel"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Return to Title?"
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Panel/ReturnToTitle" to="." method="_on_return_to_title_pressed"]

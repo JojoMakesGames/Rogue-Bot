@@ -25,6 +25,7 @@ var movement_delta: float
 var looking_direction: Vector3
 var player: Player
 var health: float
+var can_hack: bool
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -35,8 +36,10 @@ func _ready():
 	ChaosTracker.looking_direction.connect(_on_look)
 	nav.set_target_position(target.global_position)
 	timer.start()
+	health = HEALTH
 
 func _process(delta):
+	can_hack = health / HEALTH < .5
 	if player:
 		state_machine.state.handle_input(delta)
 		if input_direction != Vector3.ZERO:
@@ -105,7 +108,7 @@ func ai_shoot():
 	
 
 func _on_player_hack(player: Player, hacked_instance_id: int):
-	if hacked_instance_id == get_instance_id() and health/HEALTH < .5:
+	if hacked_instance_id == get_instance_id():
 		self.player = player
 	else:
 		self.player = null

@@ -4,6 +4,7 @@ class_name Player
 @onready var camera: Camera3D = $Camera3D
 @onready var audio: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var sparks = load("res://Scenes/Assets/particles/parts_sparks.tscn")
+@onready var you_lose = load("res://Scenes/Assets/UI/You Lose.tscn")
 
 @export var hacked_object: PhysicsBody3D
 var mouse_delta: Vector2
@@ -16,6 +17,7 @@ func _ready():
 	camera.target = self
 	change_hacked_object(hacked_object, true)
 	ChaosTracker.player_hack.emit(self, hacked_object.get_instance_id())
+	ChaosTracker.lose.connect(_on_lose)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func _physics_process(_delta):
@@ -23,7 +25,8 @@ func _physics_process(_delta):
 	
 func _process(delta):
 	if !tween.is_running():
-		position = hacked_object.position
+		if hacked_object != null:
+			position = hacked_object.position
 		rotation_degrees.x -= mouse_delta.y * 10.0 * delta
 		rotation_degrees.x = clamp(rotation_degrees.x, -90, 90)
 		
@@ -70,9 +73,14 @@ func scan_for_hackables():
 	var result = space_state.intersect_ray(query)
 	if "collider" in result:
 		current_scan = result["collider"].get_parent() as Node3D
-		if Input.is_action_just_pressed("hack"):
+		if Input.is_action_just_pressed("hack") and current_scan.can_hack:
 			ChaosTracker.player_hack.emit(self, current_scan.get_instance_id())
 			change_hacked_object(current_scan)
 	elif current_scan:
 		current_scan = null
+		
+func _on_lose():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	var lose = you_lose.instantiate()
+	add_child(lose)
 
