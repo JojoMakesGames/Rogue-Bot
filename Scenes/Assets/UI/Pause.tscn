@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnarmid04hfyt"]
+
+[ext_resource type="FontFile" uid="uid://ccia6xrthj4m" path="res://Scenes/Assets/UI/Orbitron-Medium.ttf" id="1_1mko2"]
+[ext_resource type="PackedScene" uid="uid://ccxj7wcd2kxam" path="res://Scenes/Assets/UI/HTP.tscn" id="2_8i6kj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.0
+offset_top = -97.0
+offset_right = 2490.0
+offset_bottom = 1448.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -219.5
+offset_right = 174.0
+offset_bottom = -122.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_1mko2")
+theme_override_font_sizes/normal_font_size = 70
+text = "PAUSED"
+
+[node name="Button_Cont" type="Button" parent="Panel"]
+offset_left = 1156.0
+offset_top = 761.0
+offset_right = 1486.0
+offset_bottom = 869.0
+theme_override_font_sizes/font_size = 40
+text = "CONTROLS"
+
+[node name="Button_Quit" type="Button" parent="Panel"]
+offset_left = 1156.0
+offset_top = 955.0
+offset_right = 1486.0
+offset_bottom = 1063.0
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[node name="Node2D" parent="Panel" instance=ExtResource("2_8i6kj")]
+visible = false
+
+[connection signal="pressed" from="Panel/Button_Cont" to="Panel/RichTextLabel" method="hide"]
+[connection signal="pressed" from="Panel/Button_Cont" to="Panel/Button_Cont" method="hide"]
+[connection signal="pressed" from="Panel/Button_Cont" to="Panel/Button_Quit" method="hide"]
+[connection signal="pressed" from="Panel/Button_Cont" to="Panel/Node2D" method="show"]
+[connection signal="pressed" from="Panel/Node2D/Panel/Button_Return" to="Panel/RichTextLabel" method="show"]
+[connection signal="pressed" from="Panel/Node2D/Panel/Button_Return" to="Panel/Button_Cont" method="show"]
+[connection signal="pressed" from="Panel/Node2D/Panel/Button_Return" to="Panel/Button_Quit" method="show"]
+[connection signal="pressed" from="Panel/Node2D/Panel/Button_Return" to="Panel/Node2D" method="hide"]
+
+[editable path="Panel/Node2D"]
