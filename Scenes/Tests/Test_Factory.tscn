@@ -152,13 +152,304 @@ shadow_enabled = true
 transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 3.02452, -1.6474, 8.73558)
 
 [node name="Barrel15" parent="." instance=ExtResource("33_ib68x")]
-transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 4.12019, -1.6474, 37.9212)
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 6.41168, -1.6474, 35.9849)
+
+[node name="Barrel21" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -0.0424998, -1.6474, 28.3466)
+
+[node name="Barrel22" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 3.77665, -1.6474, 25.1196)
+
+[node name="Barrel23" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -1.38669, -1.6474, 19.0089)
 
 [node name="Barrel16" parent="." instance=ExtResource("33_ib68x")]
 transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 8.63812, -1.6474, 43.268)
 
+[node name="Barrel29" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 14.4469, -1.6474, 50.1425)
+
+[node name="Barrel30" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 21.3214, -1.6474, 44.3337)
+
+[node name="Barrel31" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 37.4568, -1.6474, 63.4295)
+
+[node name="Barrel32" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 37.4568, -1.6474, 63.4295)
+
 [node name="Barrel17" parent="." instance=ExtResource("33_ib68x")]
 transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -3.51811, -1.6474, 44.3754)
+
+[node name="Barrel24" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -10.3926, -1.6474, 50.1842)
+
+[node name="Barrel25" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -15.5559, -1.6474, 44.0735)
+
+[node name="Barrel26" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -23.1942, -1.6474, 50.5277)
+
+[node name="Barrel27" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -29.6484, -1.6474, 42.8894)
+
+[node name="Barrel28" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -29.6484, -1.6474, 42.8894)
+
+[node name="Barrel33" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -35.4572, -1.6474, 36.0149)
+
+[node name="Barrel34" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -40.804, -1.6474, 40.5329)
+
+[node name="Barrel35" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -35.6406, -1.6474, 46.6435)
+
+[node name="Barrel36" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -27.8722, -1.6474, 21.7507)
+
+[node name="Barrel37" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -27.1734, -1.6474, 30.3246)
+
+[node name="Barrel38" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -45.2451, -1.6474, 8.93734)
+
+[node name="Barrel39" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -46.3109, -1.6474, 21.6206)
+
+[node name="Barrel40" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -46.3759, -1.6474, 30.8399)
+
+[node name="Barrel41" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -46.3759, -0.6474, 30.8399)
+
+[node name="Barrel42" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -45.6121, -0.6474, 30.1945)
+
+[node name="Barrel43" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -45.6121, -1.6474, 30.1945)
+
+[node name="Barrel44" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -44.3212, -1.6474, 31.7221)
+
+[node name="Barrel45" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -45.0851, -1.6474, 32.3675)
+
+[node name="Barrel46" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -45.0851, -0.6474, 32.3675)
+
+[node name="Barrel47" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -44.3212, -0.6474, 31.7221)
+
+[node name="Barrel48" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -35.9191, -0.6474, 24.6225)
+
+[node name="Barrel49" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -38.5008, -0.6474, 21.5672)
+
+[node name="Barrel50" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.9178, -0.6474, 17.6947)
+
+[node name="Barrel51" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.9178, -0.6474, 17.6947)
+
+[node name="Barrel52" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -39.0812, -0.6474, 11.5841)
+
+[node name="Barrel53" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.7343, -0.6474, 7.06614)
+
+[node name="Barrel54" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -38.8977, -0.6474, 0.955502)
+
+[node name="Barrel55" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.0232, -0.6474, -4.85326)
+
+[node name="Barrel56" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -39.7682, -0.6474, -14.0192)
+
+[node name="Barrel57" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.6576, -0.6474, -19.1826)
+
+[node name="Barrel58" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.6576, -1.6474, -19.1826)
+
+[node name="Barrel59" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.303, -1.6474, -19.9464)
+
+[node name="Barrel60" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.303, -0.6474, -19.9464)
+
+[node name="Barrel61" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.5392, -0.6474, -20.5918)
+
+[node name="Barrel62" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.5392, -1.6474, -20.5918)
+
+[node name="Barrel63" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.8938, -1.6474, -19.828)
+
+[node name="Barrel64" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.8938, -0.6474, -19.828)
+
+[node name="Barrel65" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.8938, 0.3526, -19.828)
+
+[node name="Barrel66" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -33.6576, 0.3526, -19.1826)
+
+[node name="Barrel67" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.9484, 0.3526, -20.7102)
+
+[node name="Barrel68" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.9484, -0.6474, -20.7102)
+
+[node name="Barrel69" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.9484, -1.6474, -20.7102)
+
+[node name="Barrel70" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -27.3101, -1.6474, -27.1644)
+
+[node name="Barrel71" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -25.0186, -1.6474, -29.1007)
+
+[node name="Barrel72" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -23.0824, -1.6474, -26.8092)
+
+[node name="Barrel78" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -27.6003, -1.6474, -32.156)
+
+[node name="Barrel79" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -23.7812, -1.6474, -35.3831)
+
+[node name="Barrel80" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -13.4545, -1.6474, -23.1618)
+
+[node name="Barrel81" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -0.46936, -1.6474, -34.1339)
+
+[node name="Barrel85" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -7.34383, -1.6474, -28.3251)
+
+[node name="Barrel86" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -1.53507, -1.6474, -21.4507)
+
+[node name="Barrel87" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 9.15855, -1.6474, -30.4865)
+
+[node name="Barrel88" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 17.5607, -1.6474, -37.5861)
+
+[node name="Barrel89" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 19.4969, -1.6474, -35.2946)
+
+[node name="Barrel91" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 20.7878, -1.6474, -33.767)
+
+[node name="Barrel92" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 22.0786, -1.6474, -32.2393)
+
+[node name="Barrel93" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 24.6603, -1.6474, -29.184)
+
+[node name="Barrel94" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 26.5965, -1.6474, -26.8925)
+
+[node name="Barrel95" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 30.4157, -1.6474, -30.1196)
+
+[node name="Barrel96" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 32.7072, -1.6474, -32.0558)
+
+[node name="Barrel97" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 34.9987, -1.6474, -33.9921)
+
+[node name="Barrel98" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 38.054, -1.6474, -36.5738)
+
+[node name="Barrel99" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 36.1177, -1.6474, -38.8652)
+
+[node name="Barrel100" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 33.0624, -1.6474, -36.2836)
+
+[node name="Barrel101" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 30.4807, -1.6474, -39.3389)
+
+[node name="Barrel102" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 27.4254, -1.6474, -36.7572)
+
+[node name="Barrel103" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 25.4892, -1.6474, -39.0487)
+
+[node name="Barrel104" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 22.4338, -1.6474, -36.467)
+
+[node name="Barrel105" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 25.0155, -1.6474, -33.4117)
+
+[node name="Barrel106" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 32.1151, -1.6474, -25.0096)
+
+[node name="Barrel108" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 34.4066, -1.6474, -26.9458)
+
+[node name="Barrel109" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 40.5172, -1.6474, -32.1092)
+
+[node name="Barrel110" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 26.0045, -1.6474, -19.8462)
+
+[node name="Barrel111" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 14.3869, -1.6474, -33.5952)
+
+[node name="Barrel112" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 9.04014, -1.6474, -29.0773)
+
+[node name="Barrel113" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 9.04014, -1.6474, -29.0773)
+
+[node name="Barrel114" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 5.39276, -1.6474, -19.4494)
+
+[node name="Barrel115" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 1.52025, -1.6474, -24.0323)
+
+[node name="Barrel116" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -1.06142, -1.6474, -27.0877)
+
+[node name="Barrel117" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -1.06142, -1.6474, -27.0877)
+
+[node name="Barrel107" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117409, 0.0817375, 11.0651)
+
+[node name="Barrel90" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.117409, 0.0817375, 2.06511)
+
+[node name="Barrel82" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -10.2157, -1.6474, -36.372)
+
+[node name="Barrel83" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -17.854, -1.6474, -29.9178)
+
+[node name="Barrel84" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -17.854, -1.6474, -29.9178)
+
+[node name="Barrel73" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -29.5366, -1.6474, -34.4475)
+
+[node name="Barrel74" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -38.7025, -1.6474, -26.7024)
+
+[node name="Barrel75" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -34.8834, -1.6474, -29.9295)
+
+[node name="Barrel76" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.9471, -1.6474, -27.6381)
+
+[node name="Barrel77" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, -32.9471, -1.6474, -27.6381)
 
 [node name="Barrel18" parent="." instance=ExtResource("33_ib68x")]
 transform = Transform3D(0.76383, 0, 0.645418, 0, 1, 0, -0.645418, 0, 0.76383, 3.29131, -1.6474, 47.7859)
@@ -368,6 +659,14 @@ transform = Transform3D(0.889966, 0, -0.456026, 0, 1, 0, 0.456026, 0, 0.889966, 
 
 [node name="Teleporter" parent="." node_paths=PackedStringArray("target") instance=ExtResource("36_p34df")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8261, -2.06035, -14.2784)
+target = NodePath("../Player")
+
+[node name="Teleporter4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("36_p34df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.1739, -2.06035, -23.2784)
+target = NodePath("../Player")
+
+[node name="Teleporter5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("36_p34df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1739, -2.06035, 42.7216)
 target = NodePath("../Player")
 
 [node name="Teleporter2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("36_p34df")]
@@ -868,6 +1167,9 @@ transform = Transform3D(-19.073, 0, -2.87994e-06, 0, 5, 0, 2.87994e-06, 0, -19.0
 
 [node name="road_end2" parent="NavigationRegion3D" instance=ExtResource("19_bxqn0")]
 transform = Transform3D(-19.073, 0, -2.87994e-06, 0, 5, 0, 2.87994e-06, 0, -19.073, -37.07, -1.67778, 98.4475)
+
+[node name="Barrel20" parent="." instance=ExtResource("33_ib68x")]
+transform = Transform3D(0.166872, 0, 0.985979, 0, 1, 0, -0.985979, 0, 0.166872, 31.7423, -3.2948, 64.2273)
 
 [editable path="building8/large_buildingG"]
 [editable path="large_buildingD3"]

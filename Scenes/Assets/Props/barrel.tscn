@@ -18,7 +18,7 @@ radius = 0.107746
 [node name="Barrel" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
 collision_layer = 2
-collision_mask = 3
+collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_tppq3")
 script = ExtResource("1_7kiax")
 POINTS = 200
