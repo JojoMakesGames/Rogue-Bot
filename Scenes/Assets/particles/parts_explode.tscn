@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dx88jcv2fq6lu"]
+[gd_scene load_steps=18 format=3 uid="uid://dx88jcv2fq6lu"]
 
+[ext_resource type="Script" path="res://Scenes/Assets/particles/parts_explode.gd" id="1_n2i7e"]
 [ext_resource type="AudioStream" uid="uid://gxhg8mujwhdb" path="res://Assets/SFX/explosion1.wav" id="1_ts2v1"]
 [ext_resource type="Texture2D" uid="uid://swyewgxrslvg" path="res://Scenes/Assets/particles/fire_01.png" id="2_qji6u"]
 [ext_resource type="Texture2D" uid="uid://cm8rfl8k0xt4j" path="res://Scenes/Assets/particles/scorch_01.png" id="3_tcvr5"]
@@ -76,6 +77,7 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_isxib")
 
 [node name="parts_explode" type="Node3D"]
+script = ExtResource("1_n2i7e")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_ts2v1")
@@ -84,7 +86,7 @@ autoplay = true
 [node name="Fire1" type="GPUParticles3D" parent="."]
 cast_shadow = 0
 amount = 40
-one_shot = true
+sub_emitter = NodePath(".")
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ttgqy")
@@ -93,7 +95,6 @@ draw_pass_1 = SubResource("QuadMesh_l1v50")
 [node name="Fire2" type="GPUParticles3D" parent="."]
 cast_shadow = 0
 amount = 40
-one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_ttgqy")
@@ -101,8 +102,11 @@ draw_pass_1 = SubResource("QuadMesh_kg3h1")
 
 [node name="Smoke" type="GPUParticles3D" parent="."]
 amount = 30
-one_shot = true
 explosiveness = 0.8
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_3vp3i")
 draw_pass_1 = SubResource("QuadMesh_cv4xu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

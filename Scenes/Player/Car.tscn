@@ -285,7 +285,7 @@ height = 3.47498
 diffuse_mode = 3
 albedo_color = Color(0.498039, 0, 0, 1)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_c7fw4"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_fbys0"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_ytmol")
 top_radius = 0.1
@@ -387,7 +387,7 @@ shape = SubResource("CapsuleShape3D_mabvh")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_vydnb")]
 transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 2.44494e-08, 1.43553, 0)
-mesh = SubResource("CylinderMesh_c7fw4")
+mesh = SubResource("CylinderMesh_fbys0")
 skeleton = NodePath("../DetectionArea")
 parent = NodePath("..")
 
